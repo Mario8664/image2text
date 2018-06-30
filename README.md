@@ -15,6 +15,6 @@ A cmdline tool that help you convert image with common format to character graph
 ```
 # Dependencies
 
-1. OpenCV3.0
+1. [OpenCV3.0](https://opencv.org/releases.html)
 
 2. CMake
