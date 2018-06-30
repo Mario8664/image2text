@@ -1,7 +1,7 @@
 # image2text
 A cmdline tool that help you convert image with common format to character graph.
 
-# Functions
+# Functions:
 
 1. Convert image to character graph.
 
@@ -13,7 +13,7 @@ A cmdline tool that help you convert image with common format to character graph
 ```
 /* Foo Bar*/
 ```
-# Dependencies
+# Dependencies:
 
 1. [OpenCV3.0](https://opencv.org/releases.html)
 
