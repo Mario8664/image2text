@@ -16,10 +16,16 @@
     <Filter Include="Source Files\CharGrayRatioCalculator">
       <UniqueIdentifier>{5c19486a-ed17-47da-af80-203911fcebf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{8d3db3ab-c618-453a-ba63-30093a77ad08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CharGrayRatioCalculator\GrayRatio.cpp">
       <Filter>Source Files\CharGrayRatioCalculator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
