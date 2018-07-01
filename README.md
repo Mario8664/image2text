@@ -1,6 +1,6 @@
 # image2text
 A cmdline tool that help you convert image with common format to character graph.
-
+[![Build Status](https://www.travis-ci.org/537PowerTeam/image2text.svg?branch=master)](https://www.travis-ci.org/537PowerTeam/image2text)
 # Functions:
 
 1. Convert image to character graph.
