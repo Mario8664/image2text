@@ -5,9 +5,8 @@ compiler:
   - gcc
 
 script:
-  - cd image2txt
   - mkdir bin
   - cd bin
   - cmake ..
   - make
-  - ./image2txt
+  - ./image2text
