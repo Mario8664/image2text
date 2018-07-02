@@ -2,6 +2,9 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/videoio.hpp"
+/*	For the best compatibility with VS and CMake, make sure that include head file like this way
+	#include "opencv/xxx.h" <- with "opencv/opencv2" prefix.
+*/
 #include <iostream>
 #include <cstring>
 using namespace cv;
