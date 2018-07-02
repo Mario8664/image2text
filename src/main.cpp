@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 		
 		Then you need to navigate to the project folder in cmd or powershell, run
 		
-		git rm --cache image2text.vcxproj
+		git update-index --assume-unchanged image2text.vcxproj
 		
 		manually, to pretend the conflicts of the VS configuration for each contributor.(too complex..>_<)
 		
