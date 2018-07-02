@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CharGrayRatioCalculator\GrayRatio.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -73,7 +74,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\Tools\opencv\build\include\opencv2;E:\Tools\opencv\build\include\opencv;E:\Tools\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Tools\opencv\build\include\opencv2;E:\Tools\opencv\build\include\opencv;$(LocalDebuggerWorkingDirectory)\include;E:\Tools\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Tools\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
