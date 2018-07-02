@@ -1,6 +1,7 @@
 #include<iostream>
 #include<GrayRatio.h>
-#include"opencv/cv.hpp"
+#include "opencv2/core.hpp"
+#include "opencv2/highgui.hpp"
 using namespace std;
 int main(int argc, char const *argv[])
 {
@@ -23,7 +24,7 @@ int main(int argc, char const *argv[])
 		if it popups a window normally, means that you have configured all the environment
 		successfully.
 	*/
-	Mat Result(600, 800, CV_8UC3);
+	cv::Mat Result(600, 800, CV_8UC3);
 	cv::imshow("Result", Result);
 	cv::waitKey();
     return 0;
