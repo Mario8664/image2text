@@ -10,7 +10,7 @@ IplImage* ImageHandle;
 This is a simple tool that can return gray ratio of a specified char graph.
 Use together with GenerateCharGraph.py
 */
-double CalcGrayRatio(char base,std::string _symbol_path="AllFontSymbol/")
+double CalcCharGraphGrayRatio(char base,std::string _symbol_path="AllFontSymbol/")
 {
     std::string path=_symbol_path+std::to_string(base)+".jpg";
     if(!(33<=base && base <=126))
@@ -33,4 +33,31 @@ double CalcGrayRatio(char base,std::string _symbol_path="AllFontSymbol/")
 			else black++;
         }
     return (double)(black)/(black+white);
+}
+cv::Mat ConvertPhotoToGray(std::string Photo_Path)
+{
+	Mat Original = imread(Photo_Path);
+	Mat Gray;
+	if (Original.empty())
+	{
+		std::cerr << "Can not open image." << std::endl;
+		exit(1);
+	}
+	cvtColor(Original, Gray, CV_BGR2GRAY);
+	/*
+		This function will return a Mat, a useful image format in OpenCV.
+		You can read the RGB of each pixel like below.
+	
+	for (int i = 0; i < Original.rows; ++i)
+	{
+		Vec3b *p = Original.ptr<Vec3b>(i);
+		for (int j = 0; j < Original.cols; ++j)
+		{
+			p[j][0]; //Blue
+			p[j][1]; //Green
+			p[j][2]; //Red
+		}
+	}
+	*/
+	return Gray;
 }

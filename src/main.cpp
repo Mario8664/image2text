@@ -3,8 +3,6 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-	//Tested in Windows with VS2017
-    //cout<<CalcGrayRatio('9',"D:/image2text/CharGrayRatioCalculator/AllFontSymbol/")<<endl;
-	//cin.get();
+	//auto Result = ConvertPhotoToGray("F:/CLJ.bmp");
     return 0;
 }
