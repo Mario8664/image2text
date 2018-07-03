@@ -8,8 +8,8 @@ using namespace std;
 using namespace cv;
 int main(int argc, char const *argv[])
 {
-	Mat Result(600, 800, CV_8UC3);
-	imshow("Result", Result);
-	waitKey();
+	Mat res = ConvertPhotoToGray("hero-mario.png");
+	imshow("Re", res);
+	waitKey(0);
     return 0;
 }
