@@ -37,50 +37,52 @@ double CalcCharGraphGrayRatio(char base,std::string _symbol_path="AllFontSymbol/
         }
     return (double)(black)/(black+white);
 }
-
-
 cv::Mat ConvertPhotoToGray(std::string Photo_Path)
 {
 	Mat Original = imread(Photo_Path,-1);//flags <0 is to read the alpha infomation
-	Mat Gray(Original.size(),3);
+	Mat Gray;
 	if (Original.empty())
 	{
 		std::cerr << "Can not open image." << std::endl;
 		exit(1);
 	}
-	cvtColor(Original, Gray, COLOR_RGBA2RGB);
-	//cvtColor(Original, Gray, CV_BGRA2RGB);
+	if (Original.channels() > 3) //Need to remove alpha channel
+	{
+		for (int i = 0; i < Original.rows; ++i)
+		{
+			Vec4b *p = Original.ptr<Vec4b>(i);
+			for (int j = 0; j < Original.cols; ++j)
+			{
+				if ((int)p[j][3] < 255)
+				{
+					p[j][0] = 255;
+					p[j][1] = 255;
+					p[j][2] = 255;
+				}
+			}
+		}
+	}
+	cvtColor(Original, Gray, CV_BGRA2GRAY);
 	/*
 		This function will return a Mat, a useful image format in OpenCV.
 		You can read the RGB of each pixel like below.
 	*/
-	//for (int i = 0; i < Gray.rows; ++i)
+	//for (int i = 0; i < Original.rows; ++i)
 	//{
-	//	Vec3b *p = Gray.ptr<Vec3b>(i);
-	//	for (int j = 0; j < Gray.cols; ++j)
+	//	Vec4b *p = Original.ptr<Vec4b>(i);
+	//	Vec3b *q = Gray.ptr<Vec3b>(i);
+	//	for (int j = 0; j < Original.cols; ++j)
 	//	{
-	//		std::cout<<(int)p[j][0]<<" "; //Blue
-	//		std::cout << (int)p[j][1] << " "; //Green
-	//		std::cout << (int)p[j][2] << std::endl; //Red
+	//		q[j][0] = p[j][0] * (bool)p[j][3]; //Blue
+	//		q[j][1] = p[j][1] * (bool)p[j][3]; //Green
+	//		q[j][2] = p[j][2] * (bool)p[j][3]; //Red
+	//		std::cout << (int)p[j][3] << " ";//Alpha
 	//	}
 	//}
-	for (int i = 0; i < Original.rows; ++i)
-	{
-		Vec4b *p = Original.ptr<Vec4b>(i);
-		Vec3b *q = Gray.ptr<Vec3b>(i);
-		for (int j = 0; j < Original.cols; ++j)
-		{
-			q[j][0] = p[j][0] * (bool)p[j][3]; //Blue
-			q[j][1] = p[j][1] * (bool)p[j][3]; //Green
-			q[j][2] = p[j][2] * (bool)p[j][3]; //Red
-			//std::cout << (int)p[j][3] << " ";//Alpha
-		}
-	}
-	std::cout << Gray.channels() << std::endl;
+	//std::cout << Gray.channels() << std::endl;
 	//Gray.channels[0] = Original.channels[0] * Original.channels[3];
 	//Gray.channels[1] = Original.channels[1] * Original.channels[3];
 	//Gray.channels[2] = Original.channels[2] * Original.channels[3];
 
-	
 	return Gray;
 }

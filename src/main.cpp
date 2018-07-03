@@ -9,7 +9,8 @@ using namespace cv;
 int main(int argc, char const *argv[])
 {
 	Mat res = ConvertPhotoToGray("hero-mario.png");
-	imshow("Re", res);
+	imshow("rr", res);
 	waitKey(0);
+	cin.get();
     return 0;
 }
