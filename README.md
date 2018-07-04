@@ -11,7 +11,11 @@ A cmdline tool that help you convert image with common format to character graph
 
 # Usage:
 ```
-/* Foo Bar*/
+$ > ./image2text --source [source.jpg] --scale x:y --type [html/txt] --with-color(only type is html) --output [target.html(txt)]
+
+also
+
+$ > ./image2text --help //to see a detailed usage.
 ```
 # Dependencies:
 
@@ -20,21 +24,18 @@ A cmdline tool that help you convert image with common format to character graph
 2. CMake
 
 
-		If it's your first time to open this solution in VS2017, you need to set the properties of
-		this project.
+If it's your first time to open this solution in VS2017, you need to set the properties of this project.
 		
-		VC++ Directory -> Include Directory and Library Directory -> Set the OpenCV path in your computer.
+VC++ Directory -> Include Directory and Library Directory -> Set the OpenCV path in your computer.
 		
-		Then you need to navigate to the project folder in cmd or powershell, run
+Then you need to navigate to the project folder in cmd or powershell, run
+	
+```
+git update-index --assume-unchanged image2text.vcxproj
+```
 		
-		git update-index --assume-unchanged image2text.vcxproj
+manually, to pretend the conflicts of the VS configuration for each contributor.(too complex..>_<)
 		
-		manually, to pretend the conflicts of the VS configuration for each contributor.(too complex..>_<)
-		
-		if you are coding in Linux, unless you had modified the installation path of OpenCV, our cmake script
-		had been configured all the lib path and include path correctly. Just tap your kb!
+if you are coding in Linux, unless you had modified the installation path of OpenCV, our cmake script had been configured all the lib path and include path correctly. Just tap your kb!
 			
-		This is a simple function that convert a colorful photo to gray.
-		if it popups a window normally, means that you have configured all the environment
-		successfully.
 	
