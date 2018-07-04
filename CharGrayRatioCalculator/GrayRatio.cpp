@@ -104,10 +104,10 @@ std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatr
 		{
 			//Each block is specified by left_up position (i,j) , right_down position (i+_BlockSize.Col,j+_BlockSize.Row)
 			unsigned long long Rs = 0, Gs = 0, Bs = 0, Time = 0;
-			for (int n = j; n < (j + _BlockSize.Row > nRows ? nRows : j + _BlockSize.Row); ++n) //Limit the edge
+			for (int n = i; n < (i + _BlockSize.Row > nRows ? nRows : i + _BlockSize.Row); ++n) //Limit the edge
 			{
 				Vec3b * ptr = ImageMatrix.ptr<Vec3b>(n);
-				for (int m = i; m < (i + _BlockSize.Col > nCols ? nCols : i + _BlockSize.Col); m++)
+				for (int m = j; m < (j + _BlockSize.Col > nCols ? nCols : j + _BlockSize.Col); m++)
 				{
 					Rs += (int)ptr[m][2];
 					Gs += (int)ptr[m][1];
