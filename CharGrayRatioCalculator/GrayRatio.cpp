@@ -6,8 +6,8 @@
 	#include "opencv/xxx.h" <- with "opencv/opencv2" prefix.
 */
 #include <iostream>
+#include <vector>
 #include <cstring>
-#include<memory>
 #include "GrayRatio.h"
 using namespace cv;
 IplImage* ImageHandle;
@@ -41,6 +41,72 @@ double CalcCharGraphGrayRatio(char base, std::string _symbol_path = "AllFontSymb
 
 	return (double)(black) / (black + white);
 }
+
+char ToChar(Vec3b Color)
+{
+	struct CharAndLevel
+	{
+		char a;
+		int b;
+	};
+	CharAndLevel TextColor[95]=
+	{ {' ', 0}, { '`',0 },
+	{ '.',1 }, { '\'',1 }, { ',',1 },
+	{ ':',2 }, { ';',2 }, { '-',2 },
+	{ '"',3 }, { '~',3 }, { '^',3 },
+	{ '_',4 }, { '!',4 }, { '|',4 },
+	{ '\\',5 }, { ' / ',5 }, { '(',5 }, { ')',5 }, { '{',5 }, { '*',5 },
+	{ '+',6 }, { '}',6 }, { '?',6 }, { 'i',6 }, { '7',6 }, { ']',6 }, { '[',6 }, { '>',6 }, { '<',6 }, { 'l',6 },
+	{ '=',7 }, { '1',7 }, { 'r',7 }, { '%',7 }, { 't',7 }, { 'v',7 }, { 'I',7 }, { 'c',7 },
+	{ 'j',8 }, { 'o',8 }, { 'z',8 }, { 'u',8 }, { 'J',8 }, { 'n',8 }, { 'L',8 }, { 's',8 },
+	{ 'Y',9 }, { '3',9 }, { 'C',9 }, { '&',9 }, { 'f',9 }, { '2',9 }, { '0',9 }, { 'x',9 }, { 'a',9 }, { 'V',9 }, { '@',9 }, { '4',9 }, { '5',9 }, { 'w',9 },
+	{ 'O',10 }, { 'y',10 }, { 'e',10 }, { 'k',10 }, { 'T',10 }, { 'h',10 }, { '6',10 }, { '9',10 }, { 'P',10 }, { 'Z',10 }, { 'U',10 }, { 'S',10 }, { '$',10 }, { 'D',10 },
+	{ 'F',11 }, { 'b',11 }, { 'G',11 }, { '8',11 }, { 'd',11 }, { 'm',11 }, { 'X',11 }, { 'A',11 },
+	{ 'p',12 }, { 'q',12 }, { 'g',12 }, { 'R',12 }, { 'K',12 }, { 'H',12 }, { 'E',12 }, { 'B',12 },
+	{ '#',13 }, { 'N',13 }, { 'Q',13 },
+	{ 'W',14 },
+	{ 'M',15 }};
+	double Base = ((double)Color[0] + (double)Color[1] + (double)Color[2]) / 3 / 255 * 15;
+	//Choose the level of char
+	int Begin, End, Detail;
+	for (int i = 0; i < 95; i++)
+	{
+		if (TextColor[i].b <= (int)(Base))
+		{
+			Begin = i;
+			End = Begin;
+		}
+		else
+		{
+			End = i;
+			break;
+		}
+	}
+	//Divide the color in the same level to different level
+	//For more details
+	if (Begin == End)
+		Detail = Begin;
+	else
+	{
+		Detail = Begin + (int)(Base - 95.0 / 15.0*(int)(Base)) / (95.0 / 15);
+	}
+
+	return TextColor[Detail].a;
+}
+
+void ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
+{
+	for (auto X : CalcPixelBlockAverageRGB)
+	{
+		for (auto Y : X)
+		{
+			char a = ToChar(Y);
+			std::cout<<a;
+		}
+		std::cout << std::endl;
+	}
+}
+
 cv::Mat ConvertPhotoToGray(std::string Photo_Path)
 {
 	Mat Original = imread(Photo_Path, -1);//flags <0 is to read the alpha infomation
@@ -140,3 +206,4 @@ bool RemoveAlphaChannel(cv::Mat & Source)
 	}
 	return true;
 }
+

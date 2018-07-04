@@ -9,13 +9,14 @@ using namespace cv;
 int main(int argc, char const *argv[])
 {
 	Mat p = ConvertPhotoToGray("hero-mario.png");
-	/*RemoveAlphaChannel(p);
+	RemoveAlphaChannel(p);
 	imwrite("remove.png", p);
 	Mat res = imread("remove.png");
 	PixelBlockSize pbs;
-	pbs.Row = 3; pbs.Col = 3;
+	pbs.Row = 6; pbs.Col = 3;
 	auto r = CalcPixelBlockAverageRGB(res, pbs);
-	uchar* relex=new uchar[(int)(r.size())*(int)r[0].size() * 3];
+	ToText(r);
+	/*uchar* relex=new uchar[(int)(r.size())*(int)r[0].size() * 3];
 	long long i = 0;
 	for (auto x : r)
 	{
