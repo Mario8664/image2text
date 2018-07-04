@@ -7,39 +7,43 @@
 */
 #include <iostream>
 #include <cstring>
+#include<memory>
+#include "..\include\GrayRatio.h"
 using namespace cv;
 IplImage* ImageHandle;
 /*
 This is a simple tool that can return gray ratio of a specified char graph.
 Use together with GenerateCharGraph.py
 */
-double CalcCharGraphGrayRatio(char base,std::string _symbol_path="AllFontSymbol/")
+double CalcCharGraphGrayRatio(char base, std::string _symbol_path = "AllFontSymbol/")
 {
-    std::string path=_symbol_path+std::to_string(base)+".jpg";
-    if(!(33<=base && base <=126))
-    {
-        std::cerr<<"Parsed char out of range"<<std::endl;
-        exit(1);
-    }
-    ImageHandle=cvLoadImage(path.c_str());
-    if(ImageHandle==NULL)
-    {
-        std::cerr<<"Can not open this image"<<std::endl;
-        exit(1);
-    }
-    unsigned long long black=0,white=0;
-    for(int i=0;i<ImageHandle->height;++i)
-        for(int j=0;j<ImageHandle->width;j++)
-        {
-            CvScalar cvs=cvGet2D(ImageHandle,i,j);
-            if (cvs.val[2] >= 128) white++;
+
+	std::string path = _symbol_path + std::to_string(base) + ".jpg";
+	if (!(33 <= base && base <= 126))
+	{
+		std::cerr << "Parsed char out of range" << std::endl;
+		exit(1);
+	}
+	ImageHandle = cvLoadImage(path.c_str());
+	if (ImageHandle == NULL)
+	{
+		std::cerr << "Can not open this image" << std::endl;
+		exit(1);
+	}
+	unsigned long long black = 0, white = 0;
+	for (int i = 0; i < ImageHandle->height; ++i)
+		for (int j = 0; j < ImageHandle->width; j++)
+		{
+			CvScalar cvs = cvGet2D(ImageHandle, i, j);
+			if (cvs.val[2] >= 128) white++;
 			else black++;
-        }
-    return (double)(black)/(black+white);
+		}
+
+	return (double)(black) / (black + white);
 }
 cv::Mat ConvertPhotoToGray(std::string Photo_Path)
 {
-	Mat Original = imread(Photo_Path,-1);//flags <0 is to read the alpha infomation
+	Mat Original = imread(Photo_Path, -1);//flags <0 is to read the alpha infomation
 	Mat Gray;
 	if (Original.empty())
 	{
@@ -83,6 +87,47 @@ cv::Mat ConvertPhotoToGray(std::string Photo_Path)
 	//Gray.channels[0] = Original.channels[0] * Original.channels[3];
 	//Gray.channels[1] = Original.channels[1] * Original.channels[3];
 	//Gray.channels[2] = Original.channels[2] * Original.channels[3];
-
 	return Gray;
+}
+
+std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatrix, PixelBlockSize _BlockSize)
+{
+	std::vector<std::vector<cv::Vec3b>> AveVec;//To save each rgb of "block" specified
+	//Process edge
+	int nRows = ImageMatrix.rows, nCols = ImageMatrix.cols;
+	_BlockSize.Col = _BlockSize.Col > nCols ? nCols : _BlockSize.Col;
+	_BlockSize.Row = _BlockSize.Row > nRows ? nRows : _BlockSize.Row;
+	for (int i = 0; i < nRows; i += _BlockSize.Row)
+	{
+		std::vector<cv::Vec3b> vec;
+		for (int j = 0; j < nCols; j += _BlockSize.Col)
+		{
+			//Each block is specified by left_up position (i,j) , right_down position (i+_BlockSize.Col,j+_BlockSize.Row)
+			unsigned long long Rs = 0, Gs = 0, Bs = 0, Time = 0;
+			for (int n = j; n < (j + _BlockSize.Row > nRows ? nRows : j + _BlockSize.Row); ++n) //Limit the edge
+			{
+				Vec3b * ptr = ImageMatrix.ptr<Vec3b>(j);
+				for (int m = i; m < (i + _BlockSize.Col > nCols ? nCols : i + _BlockSize.Col); m++)
+				{
+					Rs += (int)ptr[m][2];
+					Gs += (int)ptr[m][1];
+					Bs += (int)ptr[m][0];
+					Time++;
+				}
+			}
+			if (Time > 0)
+			{
+				Rs /= Time;
+				Gs /= Time;
+				Bs /= Time;
+				cv::Vec3b vc3b;
+				vc3b[2] = Rs;
+				vc3b[1] = Gs;
+				vc3b[0] = Bs;
+				vec.push_back(vc3b);
+			}
+		}
+		AveVec.push_back(vec);
+	}
+	return AveVec;
 }

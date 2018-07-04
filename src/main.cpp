@@ -9,8 +9,9 @@ using namespace cv;
 int main(int argc, char const *argv[])
 {
 	Mat res = ConvertPhotoToGray("hero-mario.png");
-	imshow("rr", res);
-	waitKey(0);
+	PixelBlockSize pbs;
+	pbs.Row = 3; pbs.Col = 2;
+	CalcPixelBlockAverageRGB(res, pbs);
 	cin.get();
     return 0;
 }
