@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cstring>
 #include<memory>
-#include "..\include\GrayRatio.h"
+#include "GrayRatio.h"
 using namespace cv;
 IplImage* ImageHandle;
 /*
