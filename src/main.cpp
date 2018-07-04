@@ -8,11 +8,14 @@ using namespace std;
 using namespace cv;
 int main(int argc, char const *argv[])
 {
-	Mat res = ConvertPhotoToGray("hero-mario.png");
+	Mat p = ConvertPhotoToGray("hero-mario.png");
+	/*RemoveAlphaChannel(p);
+	imwrite("remove.png", p);
+	Mat res = imread("remove.png");
 	PixelBlockSize pbs;
-	pbs.Row = 3; pbs.Col = 2;
+	pbs.Row = 3; pbs.Col = 3;
 	auto r = CalcPixelBlockAverageRGB(res, pbs);
-	uchar relex[208*186*3];
+	uchar* relex=new uchar[(int)(r.size())*(int)r[0].size() * 3];
 	long long i = 0;
 	for (auto x : r)
 	{
@@ -23,8 +26,8 @@ int main(int argc, char const *argv[])
 			relex[i++] = y[2];
 		}
 	}
-	Mat src = Mat(208,186, CV_8UC3, relex);
-	imshow("r", src);
+	Mat src((int)(r.size()), (int)r[0].size(), CV_8UC3,relex);*/
+	imshow("src", p);
 	waitKey(0);
     return 0;
 }

@@ -52,19 +52,7 @@ cv::Mat ConvertPhotoToGray(std::string Photo_Path)
 	}
 	if (Original.channels() > 3) //Need to remove alpha channel
 	{
-		for (int i = 0; i < Original.rows; ++i)
-		{
-			Vec4b *p = Original.ptr<Vec4b>(i);
-			for (int j = 0; j < Original.cols; ++j)
-			{
-				if ((int)p[j][3] < 255)
-				{
-					p[j][0] = 255;
-					p[j][1] = 255;
-					p[j][2] = 255;
-				}
-			}
-		}
+		RemoveAlphaChannel(Original);
 	}
 	cvtColor(Original, Gray, CV_BGRA2GRAY);
 	/*
@@ -109,6 +97,7 @@ std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatr
 				Vec3b * ptr = ImageMatrix.ptr<Vec3b>(n);
 				for (int m = j; m < (j + _BlockSize.Col > nCols ? nCols : j + _BlockSize.Col); m++)
 				{
+					
 					Rs += (int)ptr[m][2];
 					Gs += (int)ptr[m][1];
 					Bs += (int)ptr[m][0];
@@ -125,9 +114,29 @@ std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatr
 				vc3b[1] = Gs;
 				vc3b[0] = Bs;
 				vec.push_back(vc3b);
+				//std::cout << Rs<<" " << Gs << " " << Bs << std::endl;
 			}
 		}
 		AveVec.push_back(vec);
 	}
 	return AveVec;
+}
+
+bool RemoveAlphaChannel(cv::Mat & Source)
+{
+	if (Source.channels() < 4) return false;
+	for (int i = 0; i < Source.rows; ++i)
+	{
+		Vec4b *p = Source.ptr<Vec4b>(i);
+		for (int j = 0; j < Source.cols; ++j)
+		{
+			if ((int)p[j][3] < 255)
+			{
+				p[j][0] = 255;
+				p[j][1] = 255;
+				p[j][2] = 255;
+			}
+		}
+	}
+	return true;
 }
