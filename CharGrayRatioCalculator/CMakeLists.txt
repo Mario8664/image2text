@@ -1,5 +1,6 @@
 project( CalcGray )
 find_package( OpenCV REQUIRED )
 add_compile_options(-std=gnu++11)
+INCLUDE_DIRECTORIES(  ../include )
 aux_source_directory (. DIR_LIB_SRCS)
 add_library (CalcGray ${DIR_LIB_SRCS} ${OpenCV_INCLUDE_DIRS} )
