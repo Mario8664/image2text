@@ -2,6 +2,7 @@
 
 echo "Auto configure development environment for image2text"
 sudo apt-get -y update
+sudo apt-get -y install unzip curl
 sudo apt-get -y install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 echo "Downloading source code of OpenCV"
 curl -sL https://github.com/opencv/opencv/archive/3.4.1.zip > opencv.zip
