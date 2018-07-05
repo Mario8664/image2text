@@ -26,8 +26,25 @@ $ > ./image2text --help //to see a detailed usage.
 
 If it's your first time to open this solution in VS2017, you need to set the properties of this project.
 		
-VC++ Directory -> Include Directory and Library Directory -> Set the OpenCV path in your computer.
-		
+1.Right click "image2text" in the solution explorer, click "Properties", and expand subtitle "VC++ Directory".
+
+2.Add or modify
+```
+..\opencv\build\include
+..\opencv\build\include\opencv
+..\opencv\build\include\opencv2
+$(LocalDebuggerWorkingDirectory)\include
+```
+in "Include Directory".
+
+3.Add or modify
+```
+..\opencv\build\x64\vc15\lib
+```
+in "Library Directory".
+
+4.Expand "Linker" -> Input, add opencv_world341d.lib in Additional dependencies.
+
 Then you need to navigate to the project folder in cmd or powershell, run
 	
 ```
@@ -36,6 +53,5 @@ git update-index --assume-unchanged image2text.vcxproj
 		
 manually, to pretend the conflicts of the VS configuration for each contributor.(too complex..>_<)
 		
-if you are coding in Linux, unless you had modified the installation path of OpenCV, our cmake script had been configured all the lib path and include path correctly. Just tap your kb!
-			
+if you are coding in Linux, unless you had modified the installation path of OpenCV, our cmake script had been configured all the lib path and include path correctly.
 	
