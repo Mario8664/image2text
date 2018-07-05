@@ -1,4 +1,5 @@
 #include<iostream>
+#include<io.h>
 #include "opencv2/core.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
@@ -8,29 +9,23 @@ using namespace std;
 using namespace cv;
 int main(int argc, char const *argv[])
 {
-	Mat p = ConvertPhotoToGray("22.jpg");
-	RemoveAlphaChannel(p);
-	imwrite("remove.png", p);
-	Mat res = imread("remove.png");
-	res = 255 - res;//Inverse color to fit the white background
-	PixelBlockSize pbs;
-	pbs.Row = 6; pbs.Col = 3;
-	auto r = CalcPixelBlockAverageRGB(res, pbs);
-	ToText(r);
-	/*uchar* relex=new uchar[(int)(r.size())*(int)r[0].size() * 3];
-	long long i = 0;
-	for (auto x : r)
+	//Prepare for the next steps.
+	Mat Original = imread("hero-mario.png", -1);//flags <0 is to read the alpha infomation
+	if (Original.empty())
 	{
-		for (auto y : x)
-		{
-			relex[i++] = y[0];
-			relex[i++] = y[1];
-			relex[i++] = y[2];
-		}
+		std::cerr << "Can not open image." << std::endl;
+		exit(1);
 	}
-	Mat src((int)(r.size()), (int)r[0].size(), CV_8UC3,relex);*/
-	//imshow("src", p);
-	//waitKey(0);
-	system("pause");
-    return 0;
+	if (Original.channels() > 3) //Need to remove alpha channel
+	{
+		RemoveAlphaChannel(Original);
+	}
+	PixelBlockSize pbs;
+	pbs.Row = 2; pbs.Col = 1 ;
+	auto r = CalcPixelBlockAverageRGB(Original, pbs);
+	ToText(r);
+	imshow("pyt", Original);
+	waitKey(0);
+	cin.get();
+	return 0;
 }

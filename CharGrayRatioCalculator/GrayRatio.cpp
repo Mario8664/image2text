@@ -67,6 +67,7 @@ char ToChar(Vec3b Color)
 	{ 'W',14 },
 	{ 'M',15 }};
 	double Base = ((double)Color[0] + (double)Color[1] + (double)Color[2]) / 3 / 255 * 15;
+	//If cmd output, Base=15-Base;
 	//Choose the level of char
 	int Begin, End, Detail;
 	for (int i = 0; i < 95; i++)
@@ -105,43 +106,6 @@ void ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 		}
 		std::cout << std::endl;
 	}
-}
-
-cv::Mat ConvertPhotoToGray(std::string Photo_Path)
-{
-	Mat Original = imread(Photo_Path, -1);//flags <0 is to read the alpha infomation
-	Mat Gray;
-	if (Original.empty())
-	{
-		std::cerr << "Can not open image." << std::endl;
-		exit(1);
-	}
-	if (Original.channels() > 3) //Need to remove alpha channel
-	{
-		RemoveAlphaChannel(Original);
-	}
-	cvtColor(Original, Gray, CV_BGRA2GRAY);
-	/*
-		This function will return a Mat, a useful image format in OpenCV.
-		You can read the RGB of each pixel like below.
-	*/
-	//for (int i = 0; i < Original.rows; ++i)
-	//{
-	//	Vec4b *p = Original.ptr<Vec4b>(i);
-	//	Vec3b *q = Gray.ptr<Vec3b>(i);
-	//	for (int j = 0; j < Original.cols; ++j)
-	//	{
-	//		q[j][0] = p[j][0] * (bool)p[j][3]; //Blue
-	//		q[j][1] = p[j][1] * (bool)p[j][3]; //Green
-	//		q[j][2] = p[j][2] * (bool)p[j][3]; //Red
-	//		std::cout << (int)p[j][3] << " ";//Alpha
-	//	}
-	//}
-	//std::cout << Gray.channels() << std::endl;
-	//Gray.channels[0] = Original.channels[0] * Original.channels[3];
-	//Gray.channels[1] = Original.channels[1] * Original.channels[3];
-	//Gray.channels[2] = Original.channels[2] * Original.channels[3];
-	return Gray;
 }
 
 std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatrix, PixelBlockSize _BlockSize)
@@ -188,22 +152,11 @@ std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatr
 	return AveVec;
 }
 
-bool RemoveAlphaChannel(cv::Mat & Source)
+void RemoveAlphaChannel(cv::Mat & Source)
 {
-	if (Source.channels() < 4) return false;
-	for (int i = 0; i < Source.rows; ++i)
-	{
-		Vec4b *p = Source.ptr<Vec4b>(i);
-		for (int j = 0; j < Source.cols; ++j)
-		{
-			if ((int)p[j][3] < 255)
-			{
-				p[j][0] = 255;
-				p[j][1] = 255;
-				p[j][2] = 255;
-			}
-		}
-	}
-	return true;
+	Mat ch[4];
+	split(Source, ch);
+	merge(ch, 3, Source);
+	Source.setTo(Scalar::all(255),ch[3]<255);
 }
 

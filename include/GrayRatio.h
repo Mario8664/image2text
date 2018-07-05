@@ -10,7 +10,6 @@ typedef struct {
 double CalcCharGraphGrayRatio(char base, std::string _symbol_path);
 char ToChar(cv::Vec3b Color);
 void ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB);
-cv::Mat ConvertPhotoToGray(std::string Photo_Path);
 std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat &ImageMatrix, PixelBlockSize _BlockSize);
-bool RemoveAlphaChannel(cv::Mat& Source);
+void RemoveAlphaChannel(cv::Mat& Source);
 #endif // !GRAYRATIO_H
