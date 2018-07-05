@@ -152,6 +152,21 @@ std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatr
 	return AveVec;
 }
 
+cv::Mat ReadFile(std::string File_Path)
+{
+	Mat Original = imread(File_Path, -1);//flags <0 is to read the alpha infomation
+	if (Original.empty())
+	{
+		std::cerr << "Can not open image." << std::endl;
+		exit(1);
+	}
+	if (Original.channels() > 3) //Need to remove alpha channel
+	{
+		RemoveAlphaChannel(Original);
+	}
+	return Original;
+}
+
 void RemoveAlphaChannel(cv::Mat & Source)
 {
 	Mat ch[4];

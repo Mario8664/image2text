@@ -10,18 +10,9 @@ using namespace cv;
 int main(int argc, char const *argv[])
 {
 	//Prepare for the next steps.
-	Mat Original = imread("hero-mario.png", -1);//flags <0 is to read the alpha infomation
-	if (Original.empty())
-	{
-		std::cerr << "Can not open image." << std::endl;
-		exit(1);
-	}
-	if (Original.channels() > 3) //Need to remove alpha channel
-	{
-		RemoveAlphaChannel(Original);
-	}
+	auto Original = ReadFile("Miku.png");
 	PixelBlockSize pbs;
-	pbs.Row = 2; pbs.Col = 1 ;
+	pbs.Row = 6; pbs.Col = 3 ;
 	auto r = CalcPixelBlockAverageRGB(Original, pbs);
 	ToText(r);
 	imshow("pyt", Original);
