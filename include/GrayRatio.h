@@ -9,7 +9,7 @@ typedef struct {
 } PixelBlockSize;
 double CalcCharGraphGrayRatio(char base, std::string _symbol_path);
 char ToChar(cv::Vec3b Color);
-void ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB);
+std::string ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB);
 std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat &ImageMatrix, PixelBlockSize _BlockSize);
 cv::Mat ReadFile(std::string File_Path);
 void RemoveAlphaChannel(cv::Mat& Source);

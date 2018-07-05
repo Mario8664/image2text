@@ -96,17 +96,19 @@ char ToChar(Vec3b Color)
 	return TextColor[Detail].a;
 }
 
-void ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
+std::string ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 {
+	std::string result;
 	for (auto X : CalcPixelBlockAverageRGB)
 	{
 		for (auto Y : X)
 		{
 			char a = ToChar(Y);
-			std::cout<<a;
+			result += a;
 		}
-		std::cout << std::endl;
+		result += "\n";
 	}
+	return result;
 }
 
 std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatrix, PixelBlockSize _BlockSize)

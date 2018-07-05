@@ -1390,7 +1390,7 @@ namespace cmdline {
 
 				}
 
-				catch (const std::exception &e) {
+				catch (const std::exception e) {
 
 					return false;
 
