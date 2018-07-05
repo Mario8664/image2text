@@ -46,7 +46,7 @@ char ToChar(Vec3b Color)
 {
 	struct CharAndLevel
 	{
-		char a;
+		int a;
 		int b;
 	};
 	CharAndLevel TextColor[95]=
@@ -55,7 +55,7 @@ char ToChar(Vec3b Color)
 	{ ':',2 }, { ';',2 }, { '-',2 },
 	{ '"',3 }, { '~',3 }, { '^',3 },
 	{ '_',4 }, { '!',4 }, { '|',4 },
-	{ '\\',5 }, { ' / ',5 }, { '(',5 }, { ')',5 }, { '{',5 }, { '*',5 },
+	{ '\\',5 }, { '/',5 }, { '(',5 }, { ')',5 }, { '{',5 }, { '*',5 },
 	{ '+',6 }, { '}',6 }, { '?',6 }, { 'i',6 }, { '7',6 }, { ']',6 }, { '[',6 }, { '>',6 }, { '<',6 }, { 'l',6 },
 	{ '=',7 }, { '1',7 }, { 'r',7 }, { '%',7 }, { 't',7 }, { 'v',7 }, { 'I',7 }, { 'c',7 },
 	{ 'j',8 }, { 'o',8 }, { 'z',8 }, { 'u',8 }, { 'J',8 }, { 'n',8 }, { 'L',8 }, { 's',8 },
@@ -66,7 +66,8 @@ char ToChar(Vec3b Color)
 	{ '#',13 }, { 'N',13 }, { 'Q',13 },
 	{ 'W',14 },
 	{ 'M',15 }};
-	double Base = ((double)Color[0] + (double)Color[1] + (double)Color[2]) / 3 / 255 * 15;
+	double Base = ((double)Color[0]* 0.114 + (double)Color[1]* 0.587 + (double)Color[2]* 0.299) / 255 * 15;
+	Base = 15 - Base;
 	//If cmd output, Base=15-Base;
 	//Choose the level of char
 	int Begin, End, Detail;

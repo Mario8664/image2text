@@ -12,11 +12,11 @@ int main(int argc, char const *argv[])
 	//Prepare for the next steps.
 	auto Original = ReadFile("Miku.png");
 	PixelBlockSize pbs;
-	pbs.Row = 6; pbs.Col = 3 ;
+	pbs.Row = 6; pbs.Col = 3;
 	auto r = CalcPixelBlockAverageRGB(Original, pbs);
 	ToText(r);
-	imshow("pyt", Original);
-	waitKey(0);
-	cin.get();
+	//imshow("pyt", Original);
+	//waitKey(0);
+	//cin.get();
 	return 0;
 }
