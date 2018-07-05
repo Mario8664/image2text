@@ -1,0 +1,10 @@
+C:\Users\NemesissLin\source\repos\WebImage2Text
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=WebImage2Text
+--content-root=C:\Users\NemesissLin\source\repos\WebImage2Text
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\Home\Image2Text.cshtml
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\Home\Result.cshtml
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\Shared\_Layout.cshtml
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\_ViewImports.cshtml
+--file=C:\Users\NemesissLin\source\repos\WebImage2Text\Views\_ViewStart.cshtml

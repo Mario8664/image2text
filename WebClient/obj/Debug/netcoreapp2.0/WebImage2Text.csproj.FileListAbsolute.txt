@@ -1,0 +1,11 @@
+c:\users\nemesisslin\source\repos\WebImage2Text\bin\Debug\netcoreapp2.0\WebImage2Text.deps.json
+c:\users\nemesisslin\source\repos\WebImage2Text\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.json
+c:\users\nemesisslin\source\repos\WebImage2Text\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.dev.json
+c:\users\nemesisslin\source\repos\WebImage2Text\bin\Debug\netcoreapp2.0\WebImage2Text.dll
+c:\users\nemesisslin\source\repos\WebImage2Text\bin\Debug\netcoreapp2.0\WebImage2Text.pdb
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.csprojResolveAssemblyReference.cache
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.csproj.CoreCompileInputs.cache
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfoInputs.cache
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.dll
+c:\users\nemesisslin\source\repos\WebImage2Text\obj\Debug\netcoreapp2.0\WebImage2Text.pdb

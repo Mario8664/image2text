@@ -1,0 +1,37 @@
+﻿@model WebImage2Text.Models.ImageViewModel
+
+@{
+    ViewData["Title"] = "Image2Text";
+}
+
+<h2>Image2Text</h2>
+
+<h4>一个可以把图像转换成字符画的玩具</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" role="form" asp-action="UploadImage" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ScaleX" class="control-label"></label>
+                <input asp-for="ScaleX" class="form-control" placeholder="X伸缩比"/>
+                <span asp-validation-for="ScaleX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScaleY" class="control-label"></label>
+                <input asp-for="ScaleY" class="form-control" placeholder="Y伸缩比"/>
+                <span asp-validation-for="ScaleY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="file" asp-for="SourceImage"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Upload" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
