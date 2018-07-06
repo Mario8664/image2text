@@ -55,4 +55,3 @@ script:
   - cd bin
   - cmake ..
   - make
-  - ./image2txt
