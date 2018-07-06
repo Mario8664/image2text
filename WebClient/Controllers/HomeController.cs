@@ -8,12 +8,20 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebImage2Text.Models;
+using Microsoft.Extensions.Options;
+
 
 namespace WebImage2Text.Controllers
 {
     public class HomeController : Controller
     {
 
+        private AppSettings AppSettings { get; set; }
+
+        public HomeController(IOptions<AppSettings> settings)
+        {
+            AppSettings = settings.Value;
+        }
         public IActionResult Image2Text()
         {
             return View();
@@ -36,10 +44,11 @@ namespace WebImage2Text.Controllers
             }
             string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
             Param=String.Format(Param,filePath,Model.ScaleX, Model.ScaleY, 1);
-            ViewData["Result"]=exec("image2text",Param);
+            ViewData["Result"]=exec(AppSettings.ExecuteFileName,Param);
+            if(System.IO.File.Exists(filePath)) System.IO.File.Delete(filePath);
             return View("Result");
         }
-        public string exec(string exePath, string parameters)
+        private string exec(string exePath, string parameters)
         {
             System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
             pProcess.StartInfo.FileName = exePath;

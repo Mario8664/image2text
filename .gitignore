@@ -36,3 +36,6 @@
 AllFontSymbol
 x64
 Debug
+bin
+WebClient/bin
+WebClient/obj

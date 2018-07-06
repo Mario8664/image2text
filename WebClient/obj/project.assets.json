@@ -6067,7 +6067,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "LxiNi/QSd9PTbCWtYDiEAS58/ewxVxGKi4ROOVKQlKGWNoR/BHivcx+uuORMSNElJl3rUrOqYFrgVnMCppGo4Q==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -8017,7 +8017,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "TyF/EuqewnwiX7/wOnXh+8h7xkHqdkWn8ojmEkiJMtOS9tM6ODVDXBAWhEV0/mueyzKRy3ayZ9Wa9J4HarhVkw==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -10184,7 +10184,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "d/Q+9HPg9xKVP4tayCbgPTw8Md6own2XKPJGz+vbVPJbna4PtlAR66gYa+tWJdIP8vslYw5okeO13Matk1K1hw==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -13124,30 +13124,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NemesissLin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/home/nemesisslin/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NemesissLin\\source\\repos\\WebImage2Text\\WebImage2Text.csproj",
+      "projectUniqueName": "/home/nemesisslin/CppCode/image2text/WebClient/WebImage2Text.csproj",
       "projectName": "WebImage2Text",
-      "projectPath": "C:\\Users\\NemesissLin\\source\\repos\\WebImage2Text\\WebImage2Text.csproj",
-      "packagesPath": "C:\\Users\\NemesissLin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NemesissLin\\source\\repos\\WebImage2Text\\obj\\",
+      "projectPath": "/home/nemesisslin/CppCode/image2text/WebClient/WebImage2Text.csproj",
+      "packagesPath": "/home/nemesisslin/.nuget/packages/",
+      "outputPath": "/home/nemesisslin/CppCode/image2text/WebClient/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\NemesissLin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/nemesisslin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
