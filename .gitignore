@@ -39,3 +39,4 @@ Debug
 bin
 WebClient/bin
 WebClient/obj
+/WebClient/wwwroot/generatetxt

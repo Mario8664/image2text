@@ -9,3 +9,13 @@ C:\Users\NemesissLin\source\repos\WebImage2Text\obj\Release\netcoreapp2.0\WebIma
 C:\Users\NemesissLin\source\repos\WebImage2Text\obj\Release\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
 C:\Users\NemesissLin\source\repos\WebImage2Text\obj\Release\netcoreapp2.0\WebImage2Text.dll
 C:\Users\NemesissLin\source\repos\WebImage2Text\obj\Release\netcoreapp2.0\WebImage2Text.pdb
+D:\image2text\WebClient\bin\Release\netcoreapp2.0\WebImage2Text.deps.json
+D:\image2text\WebClient\bin\Release\netcoreapp2.0\WebImage2Text.runtimeconfig.json
+D:\image2text\WebClient\bin\Release\netcoreapp2.0\WebImage2Text.runtimeconfig.dev.json
+D:\image2text\WebClient\bin\Release\netcoreapp2.0\WebImage2Text.dll
+D:\image2text\WebClient\bin\Release\netcoreapp2.0\WebImage2Text.pdb
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.csproj.CoreCompileInputs.cache
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.AssemblyInfoInputs.cache
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.dll
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.pdb

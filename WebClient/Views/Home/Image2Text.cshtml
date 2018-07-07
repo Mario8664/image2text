@@ -14,12 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ScaleX" class="control-label"></label>
-                <input asp-for="ScaleX" class="form-control" placeholder="X伸缩比" />
+                <input asp-for="ScaleX" class="form-control" placeholder="X伸缩比" required:true/>
                 <span asp-validation-for="ScaleX" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ScaleY" class="control-label"></label>
-                <input asp-for="ScaleY" class="form-control" placeholder="Y伸缩比" />
+                <input asp-for="ScaleY" class="form-control" placeholder="Y伸缩比" required:true/>
                 <span asp-validation-for="ScaleY" class="text-danger"></span>
             </div>
             <div class="form-group">

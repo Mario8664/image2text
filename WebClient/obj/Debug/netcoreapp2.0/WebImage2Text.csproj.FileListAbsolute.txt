@@ -25,7 +25,6 @@ D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.json
 D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.dev.json
 D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.dll
 D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.pdb
-D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.csprojResolveAssemblyReference.cache
 D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.csproj.CoreCompileInputs.cache
 D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfoInputs.cache
 D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
