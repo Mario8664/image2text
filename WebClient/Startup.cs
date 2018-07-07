@@ -25,6 +25,7 @@ namespace WebImage2Text
             services.AddMvc();
             services.AddOptions();
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +35,7 @@ namespace WebImage2Text
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
+                app.UseSession();
             }
             else
             {
@@ -47,6 +49,9 @@ namespace WebImage2Text
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Image2Text}/{id?}");
+                routes.MapRoute(
+                    name: "CharGraphResult",
+                    template: "{controller=Home}/{action=ShowCharGraphHtml}/{id?}");
             });
         }
     }

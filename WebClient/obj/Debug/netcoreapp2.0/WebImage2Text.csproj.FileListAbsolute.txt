@@ -20,3 +20,14 @@ c:/users/nemesisslin/source/repos/WebImage2Text/obj/Debug/netcoreapp2.0/WebImage
 /home/nemesisslin/CppCode/image2text/WebClient/obj/Debug/netcoreapp2.0/WebImage2Text.AssemblyInfo.cs
 /home/nemesisslin/CppCode/image2text/WebClient/obj/Debug/netcoreapp2.0/WebImage2Text.dll
 /home/nemesisslin/CppCode/image2text/WebClient/obj/Debug/netcoreapp2.0/WebImage2Text.pdb
+D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.deps.json
+D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.json
+D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.runtimeconfig.dev.json
+D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.dll
+D:\image2text\WebClient\bin\Debug\netcoreapp2.0\WebImage2Text.pdb
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.csprojResolveAssemblyReference.cache
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.csproj.CoreCompileInputs.cache
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfoInputs.cache
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.dll
+D:\image2text\WebClient\obj\Debug\netcoreapp2.0\WebImage2Text.pdb
