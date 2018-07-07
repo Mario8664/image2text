@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebImage2Text.Models;
 using Microsoft.Extensions.Options;
+using System.Text;
 
 namespace WebImage2Text.Controllers
 {
@@ -74,16 +75,17 @@ namespace WebImage2Text.Controllers
             {
                 HttpContext.Session.Clear();
                 string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
-                Param = String.Format(Param, UploadFileName, ScaleX, ScaleY, 1);
+                Param = String.Format(Param, Encoding.Default.GetString(UploadFileName), Encoding.Default.GetString(ScaleX), Encoding.Default.GetString(ScaleY), 1);
                 int ExitCode;
                 ViewData["Result"] = exec(AppSettings.ExecuteFileName, Param,out ExitCode);
                 if(ExitCode!=0)
                 {
                     return View("Error",new ErrorViewModel { ErrorCode = 1 });
                 }
-                if (System.IO.File.Exists(UploadFileName.ToString())) System.IO.File.Delete(UploadFileName.ToString());
+                
                 return View("CharGraphHtml");
             }
+            if (System.IO.File.Exists(Encoding.Default.GetString(UploadFileName))) System.IO.File.Delete(Encoding.Default.GetString(UploadFileName));
             return View("Error", new ErrorViewModel { ErrorCode = 2 });
         }
         public bool SaveImage(string FilePath,List<IFormFile> SourceImage)
