@@ -1,0 +1,26 @@
+﻿@model WebImage2Text.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h2>出现了一些小问题</h2>
+
+<div>
+    <h4>服务器和Poxiao.Zheng一起打王者去了</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ErrorCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ErrorCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ErrorDetail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ErrorDetail)
+        </dd>
+    </dl>
+</div>

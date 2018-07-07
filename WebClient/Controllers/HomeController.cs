@@ -8,13 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 using WebImage2Text.Models;
 using Microsoft.Extensions.Options;
 
-
 namespace WebImage2Text.Controllers
 {
     public class HomeController : Controller
     {
 
         private AppSettings AppSettings { get; set; }
+        public IActionResult Error()
+        {
+            int Code=-3;
+            if(int.TryParse(Request.Query["id"], out Code))
+            {
+                return View(new ErrorViewModel { ErrorCode = Code });
+            }
+            return View(new ErrorViewModel { ErrorCode = -1 });
+        }
 
         public HomeController(IOptions<AppSettings> settings)
         {
@@ -26,26 +34,29 @@ namespace WebImage2Text.Controllers
             return View();
         }
         [HttpPost("UploadImage")]
-        public string UploadImage([FromServices]IHostingEnvironment env, List<IFormFile> SourceImage,ImageViewModel Model)
+        public ContentResult UploadImage([FromServices]IHostingEnvironment env, List<IFormFile> SourceImage,ImageViewModel Model)
         {
             // full path to file in temp location
             var FilePath = env.WebRootPath + "/upload/" + DateTime.Now.ToString("MMddHHmmss") + "." + SourceImage.First().FileName.Split('.').Last();
-            SaveImage(FilePath,Model.SourceImage);
-            HttpContext.Session.SetString("FilePath", FilePath);
-            HttpContext.Session.SetString("ScaleX", Model.ScaleX.ToString());
-            HttpContext.Session.SetString("ScaleY", Model.ScaleY.ToString());
-            int ProcessType;
-            if (int.TryParse(Request.Form["ProcessType"], out ProcessType))
+            if(SourceImage.Count!=0)
             {
-                switch (ProcessType)
+                SaveImage(FilePath, Model.SourceImage);
+                HttpContext.Session.SetString("FilePath", FilePath);
+                HttpContext.Session.SetString("ScaleX", Model.ScaleX.ToString());
+                HttpContext.Session.SetString("ScaleY", Model.ScaleY.ToString());
+                int ProcessType;
+                if (int.TryParse(Request.Form["ProcessType"], out ProcessType))
                 {
-                    case 0:
-                        return "Home/ShowCharGraphHtml";
-                    default:
-                        break;
+                    switch (ProcessType)
+                    {
+                        case 0:
+                            return Content("Home/ShowCharGraphHtml");
+                        default:
+                            break;
+                    }
                 }
             }
-            return "Relax";
+            return Content("Home/Error?id=0");
         }
         public string DownloadText()
         {
@@ -57,26 +68,23 @@ namespace WebImage2Text.Controllers
         }
         public IActionResult ShowCharGraphHtml()
         {
-            if(HttpContext.Session.IsAvailable)
+            byte[] UploadFileName, ScaleX, ScaleY;
+            var Session = HttpContext.Session;
+            if (Session.TryGetValue("FilePath",out UploadFileName)&& Session.TryGetValue("ScaleX",out ScaleX)&&Session.TryGetValue("ScaleY",out ScaleY))
             {
-                string UploadedFileName = HttpContext.Session.GetString("FilePath");
-                string ScaleX = HttpContext.Session.GetString("ScaleX");
-                string ScaleY = HttpContext.Session.GetString("ScaleY");
                 HttpContext.Session.Clear();
                 string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
-                Param = String.Format(Param, UploadedFileName, ScaleX, ScaleY, 1);
+                Param = String.Format(Param, UploadFileName, ScaleX, ScaleY, 1);
                 int ExitCode;
                 ViewData["Result"] = exec(AppSettings.ExecuteFileName, Param,out ExitCode);
                 if(ExitCode!=0)
                 {
-                    ViewData["Result"] = "电脑画不出来了呢>_< (Internal Error)";
-                    return View("CharGraphHtml");
+                    return View("Error",new ErrorViewModel { ErrorCode = 1 });
                 }
-                if (System.IO.File.Exists(UploadedFileName)) System.IO.File.Delete(UploadedFileName);
+                if (System.IO.File.Exists(UploadFileName.ToString())) System.IO.File.Delete(UploadFileName.ToString());
                 return View("CharGraphHtml");
             }
-            ViewData["Result"] = "电脑画不出来了呢>_< (Internal Error)";
-            return View("CharGraphHtml");
+            return View("Error", new ErrorViewModel { ErrorCode = 2 });
         }
         public bool SaveImage(string FilePath,List<IFormFile> SourceImage)
         {

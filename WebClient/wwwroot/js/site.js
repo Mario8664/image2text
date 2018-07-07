@@ -1,7 +1,4 @@
 ﻿// Write your JavaScript code.
-function ShowAlert() {
-    alert("成功!");
-}
 function UploadImageInfo(type) {
     var form = new FormData(document.getElementById("imageform"));
     form.append("ProcessType",type);

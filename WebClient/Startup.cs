@@ -47,11 +47,21 @@ namespace WebImage2Text
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Image2Text}/{id?}");
+                    "CharGraphResult",
+                    "ShowCharGraphHtml/",
+                    new { controller = "Home",action= "ShowCharGraphHtml" }
+                    );
                 routes.MapRoute(
-                    name: "CharGraphResult",
-                    template: "{controller=Home}/{action=ShowCharGraphHtml}/{id?}");
+                    "Default",
+                     "{controller}/{action}",
+                     new { controller = "Home", action = "Image2Text" }
+                     );
+                routes.MapRoute(
+                    "ErrorPage",
+                    "Error/{id?}/{Content?}",
+                    new { controller = "Home" ,action= "Error" }
+                    );
+
             });
         }
     }
