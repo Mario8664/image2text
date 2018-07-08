@@ -1,59 +1,138 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebImage2Text.Models;
+using Microsoft.Extensions.Options;
+using System.Text;
 
 namespace WebImage2Text.Controllers
 {
     public class HomeController : Controller
     {
 
+        private AppSettings AppSettings { get; set; }
+        public IActionResult Error()
+        {
+            int Code = -3;
+            if (int.TryParse(Request.Query["id"], out Code))
+            {
+                return View(new ErrorViewModel { ErrorCode = Code });
+            }
+            return View(new ErrorViewModel { ErrorCode = -1 });
+        }
+
+        public HomeController(IOptions<AppSettings> settings)
+        {
+            AppSettings = settings.Value;
+            Console.WriteLine("Image2Text WebServer is running! >_<");
+        }
         public IActionResult Image2Text()
         {
             return View();
         }
         [HttpPost("UploadImage")]
-        public IActionResult UploadImage([FromServices]IHostingEnvironment env, List<IFormFile> SourceImage, ImageViewModel Model)
-        { 
+        public ContentResult UploadImage([FromServices]IHostingEnvironment env, List<IFormFile> SourceImage, ImageViewModel Model)
+        {
             // full path to file in temp location
-            var filePath = env.WebRootPath + "/upload/"+DateTime.Now.ToString("MMddHHmmss") + "."+ SourceImage.First().FileName.Split('.').Last();
-
-            foreach (var formFile in SourceImage)
+            var NowTimeStamp = DateTime.Now.ToString("MMddHHmmss");
+            var FilePath = env.WebRootPath + "/upload/" + NowTimeStamp + "." + SourceImage.First().FileName.Split('.').Last();
+            if (SourceImage.Count != 0)
             {
-                if (formFile.Length > 0)
+                HttpContext.Session.SetString("FilePath", FilePath);
+                HttpContext.Session.SetString("ScaleX", Model.ScaleX.ToString());
+                HttpContext.Session.SetString("ScaleY", Model.ScaleY.ToString());
+                HttpContext.Session.SetString("TimeStamp",NowTimeStamp);
+                SaveImage(FilePath, Model.SourceImage);
+            }
+            return Content("success");
+        }
+        public IActionResult DownloadText([FromServices]IHostingEnvironment env)
+        {
+            var SessionResult = GetSessionKey(HttpContext.Session);
+            if (SessionResult.Count == 0)
+            {
+                return View("Error", new ErrorViewModel { ErrorCode = 2 });
+            }
+            try
+            {
+                string Param = "--source={0} --scalex={1} --scaley={2} --type={3} --output={4}";
+                var FilePath = env.WebRootPath + "/generatetxt/" + SessionResult["TimeStamp"] + ".txt";
+                Param = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 0, FilePath);
+                if(ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, Param)==0)
                 {
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        formFile.CopyTo(stream);
-                    }
+                    if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
+                    FileStream TxtStream = new FileStream(FilePath, FileMode.Open);
+                    return File(TxtStream, "text/plain",SessionResult["TimeStamp"] + ".txt");
                 }
             }
-            string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
-            Param=String.Format(Param,filePath,Model.ScaleX, Model.ScaleY, 1);
-            ViewData["Result"]=exec("image2text",Param);
-            return View("Result");
+            catch 
+            {
+                return View("Error", new ErrorViewModel { ErrorCode = -1 });
+            }
+            return View("Error", new ErrorViewModel { ErrorCode = -1 });
         }
-        public string exec(string exePath, string parameters)
+        public string ShowColorHtml()
         {
-            System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
-            pProcess.StartInfo.FileName = exePath;
-            pProcess.StartInfo.Arguments = parameters; //argument
-            pProcess.StartInfo.UseShellExecute = false;
-            pProcess.StartInfo.RedirectStandardOutput = true;
-            pProcess.StartInfo.RedirectStandardError = true;
-            pProcess.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
-            pProcess.Start();
-            string output = pProcess.StandardOutput.ReadToEnd(); //The output result
-            string errput = pProcess.StandardError.ReadToEnd();
-            pProcess.WaitForExit();
-            return output;
+            return "Show Color Html";
         }
+        public Dictionary<string, string> GetSessionKey(ISession HttpSession)
+        {
+            string UploadFileName = HttpContext.Session.GetString("FilePath");
+            string ScaleX = HttpContext.Session.GetString("ScaleX");
+            string ScaleY = HttpContext.Session.GetString("ScaleY");
+            string TimeStamp= HttpContext.Session.GetString("TimeStamp");
+            Dictionary<string,string> SessionKey;
+            if (!(string.IsNullOrEmpty(UploadFileName) && string.IsNullOrEmpty(ScaleX) && string.IsNullOrEmpty(ScaleY) && string.IsNullOrEmpty(TimeStamp)))
+            {
+                SessionKey = new Dictionary<string, string>{{ "UploadFileName", UploadFileName },{ "ScaleX", ScaleX },{ "ScaleY", ScaleY } , { "TimeStamp", TimeStamp } };
+                return SessionKey;
+            }
+            return new Dictionary<string, string>();
+        }
+        public IActionResult ShowCharGraphHtml()
+        {
+            var SessionResult = GetSessionKey(HttpContext.Session);
+            if(SessionResult.Count==0)
+            {
+                return View("Error", new ErrorViewModel { ErrorCode = 2 });
+            }
+            HttpContext.Session.Clear();
+            string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
+            Param = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 1);
+            int ExitCode;
+            ViewData["Result"] = ImageProcesser.Instance.GenerateOutputString(AppSettings.ExecuteFileName, Param, out ExitCode);
+            if (ExitCode != 0)
+            {
+                if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
+                return View("Error", new ErrorViewModel { ErrorCode = 1 });
+            }
+            return View("CharGraphHtml");
+        }
+        public bool SaveImage(string FilePath, List<IFormFile> SourceImage)
+        {
+            try
+            {
+                foreach (var formFile in SourceImage)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        using (var stream = new FileStream(FilePath, FileMode.Create))
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
     }
 }

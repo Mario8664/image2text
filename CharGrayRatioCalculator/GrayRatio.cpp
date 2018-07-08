@@ -51,7 +51,7 @@ char ToChar(Vec3b Color)
 		int b;
 	};
 	CharAndLevel TextColor[95]=
-	{ {' ', 0}, { '`',0 },
+	{ {' ', 0}, { ' ',0 },
 	{ '.',1 }, { '\'',1 }, { ',',1 },
 	{ ':',2 }, { ';',2 }, { '-',2 },
 	{ '"',3 }, { '~',3 }, { '^',3 },
@@ -67,7 +67,7 @@ char ToChar(Vec3b Color)
 	{ '#',13 }, { 'N',13 }, { 'Q',13 },
 	{ 'W',14 },
 	{ 'M',15 }};
-	double Base = ((double)Color[0]* 0.114 + (double)Color[1]* 0.587 + (double)Color[2]* 0.299) / 255 * 15;
+	double Base = ((double)Color[0] + (double)Color[1] + (double)Color[2])/ 3 / 255 * 15;
 	Base = 15 - Base;
 	//If cmd output, Base=15-Base;
 	//Choose the level of char

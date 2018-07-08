@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebImage2Text.Models;
 
 namespace WebImage2Text
 {
@@ -22,6 +23,9 @@ namespace WebImage2Text
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddOptions();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,6 +35,7 @@ namespace WebImage2Text
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
+                app.UseSession();
             }
             else
             {
@@ -42,8 +47,21 @@ namespace WebImage2Text
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Image2Text}/{id?}");
+                    "CharGraphResult",
+                    "ShowCharGraphHtml/",
+                    new { controller = "Home",action= "ShowCharGraphHtml" }
+                    );
+                routes.MapRoute(
+                    "Default",
+                     "{controller}/{action}",
+                     new { controller = "Home", action = "Image2Text" }
+                     );
+                routes.MapRoute(
+                    "ErrorPage",
+                    "Error/{id?}/{Content?}",
+                    new { controller = "Home" ,action= "Error" }
+                    );
+
             });
         }
     }

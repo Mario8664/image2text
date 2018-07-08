@@ -1,6 +1,9 @@
 # image2text
 A cmdline tool that help you convert image with common format to character graph.
 [![Build Status](https://www.travis-ci.org/537PowerTeam/image2text.svg?branch=master)](https://www.travis-ci.org/537PowerTeam/image2text)
+
+[image2text demo website](http://nemesiss.moe)
+
 # Functions:
 
 1. Convert image to character graph.
@@ -11,7 +14,7 @@ A cmdline tool that help you convert image with common format to character graph
 
 # Usage:
 ```
-$ > ./image2text --source [source.jpg] --scale x:y --type [html/txt] --with-color(only type is html) --output [target.html(txt)]
+$ > ./image2text --source=[source.jpg] --scalex=[x] --scaley=[y] --type=[0 is stdout, 1 is output txt] --color=[0/1] --output=[target.html(txt)]
 
 also
 

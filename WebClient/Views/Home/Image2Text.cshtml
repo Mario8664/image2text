@@ -10,26 +10,31 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Home" role="form" asp-action="UploadImage" enctype="multipart/form-data" method="post">
+        <form id="imageform">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ScaleX" class="control-label"></label>
-                <input asp-for="ScaleX" class="form-control" placeholder="X伸缩比"/>
+                <input asp-for="ScaleX" class="form-control" placeholder="X伸缩比" required:true/>
                 <span asp-validation-for="ScaleX" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ScaleY" class="control-label"></label>
-                <input asp-for="ScaleY" class="form-control" placeholder="Y伸缩比"/>
+                <input asp-for="ScaleY" class="form-control" placeholder="Y伸缩比" required:true/>
                 <span asp-validation-for="ScaleY" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="file" asp-for="SourceImage"/>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Upload" class="btn btn-default" />
+                <input type="file" asp-for="SourceImage" required:true />
             </div>
         </form>
+        <div class="form-group display-inline">
+            <input type="button" value="在浏览器中查看字符画" class="btn btn-default" onclick="UploadImageInfo(0);">
+            <br />
+            <input type="button" value="在浏览器中查看带颜色Html" class="btn btn-default" onclick="UploadImageInfo(1);">
+            <br />
+            <input type="button" value="下载Txt" class="btn btn-default" onclick="UploadImageInfo(2);">
+        </div>
     </div>
+    
 </div>
 
 @section Scripts {
