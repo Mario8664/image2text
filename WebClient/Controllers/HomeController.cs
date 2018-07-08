@@ -61,8 +61,8 @@ namespace WebImage2Text.Controllers
             try
             {
                 var FilePath = Path.Combine(env.WebRootPath,"StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".txt");
-                Param = String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 0, FilePath);
-                if(ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, Param)==0)
+                string BuiltParam = String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 0, FilePath);
+                if(ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, BuiltParam) ==0)
                 {
                     if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
                     FileStream TxtStream = new FileStream(FilePath, FileMode.Open);
@@ -85,8 +85,8 @@ namespace WebImage2Text.Controllers
             try
             {
                 var FilePath = Path.Combine(env.WebRootPath,"StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".html");
-                Param = String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 2, FilePath);
-                if (ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, Param) == 0)
+                string BuiltParam =  String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 2, FilePath);
+                if (ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, BuiltParam) == 0)
                 {
                     if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
                     Response.Redirect(Path.Combine("StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".html"));
@@ -120,7 +120,7 @@ namespace WebImage2Text.Controllers
                 return View("Error", new ErrorViewModel { ErrorCode = 2 });
             }
             HttpContext.Session.Clear();
-            Param = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 1);
+            string BuiltParam = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 1);
             int ExitCode;
             ViewData["Result"] = ImageProcesser.Instance.GenerateOutputString(AppSettings.ExecuteFileName, Param, out ExitCode);
             if (ExitCode != 0)

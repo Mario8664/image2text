@@ -19,3 +19,4 @@ D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.AssemblyInfoInpu
 D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.AssemblyInfo.cs
 D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.dll
 D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.pdb
+D:\image2text\WebClient\obj\Release\netcoreapp2.0\WebImage2Text.csprojResolveAssemblyReference.cache
