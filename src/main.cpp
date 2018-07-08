@@ -42,9 +42,6 @@ int main(int argc, char *argv[])
 	pbs.Row = scaley; pbs.Col = scalex;
 	auto r = CalcPixelBlockAverageRGB(Original, pbs);
 
-	ToText(r);
-	ToHTML(r);
-
 
 	if (type == 0)
 	{

@@ -7,7 +7,7 @@
 */
 #include <iostream>
 #include <vector>
-#include <string>
+#include <cstring>
 #include "GrayRatio.h"
 #include<algorithm>
 using namespace cv;
@@ -117,11 +117,11 @@ std::string ToHTML(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 	std::string result = "<html>\n<head>\n";
 	result += "<meta http-equiv=\"content - type\" content=\"text / html; charset = utf - 8\" />       /* css-3 */\n";
 	result += "<style type=\"text / css\" media=\"all\">  /* Mozilla, since 1999 */\n";
-	result += "pre {\nwhite-space: pre-wrap;      /* Opera 4-6 */\n";
+	result += "pre {\n \n";
 	result += "white-space: -moz-pre-wrap;    /* Opera 7 */\n";
 	result += "white-space: -pre-wrap;       /* Internet Explorer 5.5+ */\n";
 	result += "font-family: 'Menlo', 'Courier New', 'Consola';\n";
-	result += "line-height: 1.0;\nfont-size: 7px;\n}\n</style>\n";
+	result += "line-height: 1.0;\nfont-size: 6px;\n}\n</style>\n";
 	result += "</head>\n<body>\n<pre>\n";
 	for (auto X : CalcPixelBlockAverageRGB)
 	{
