@@ -14,13 +14,17 @@ function UploadImageInfo(type) {
         success: function (data) {
             switch (type) {
                 case 0:
-                    window.location.href = "Home/ShowCharGraphHtml";
+                    window.location.href = "/ShowCharGraphHtml";
                     break;
                 case 2:
-                    window.location.href = "Home/DownloadText";
+                    window.location.href = "/DownloadText";
+                    break;
+                case 1:
+                    window.location.href = "/ShowColorHtml";
                     break;
                 default:
-                    alert("这些坑还没填");
+                    alert("Unexpected Error.");
+                    break;
             }
         },
         error: function (e) {

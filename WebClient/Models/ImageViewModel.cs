@@ -22,5 +22,7 @@ namespace WebImage2Text.Models
     public class AppSettings
     {
         public string ExecuteFileName { get; set; }
+        public string ImageUploadPath { get; set; }
+        public string TextFileSavaPath { get; set; }
     }
 }

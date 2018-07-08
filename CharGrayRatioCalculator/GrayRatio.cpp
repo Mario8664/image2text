@@ -115,7 +115,7 @@ std::string ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 std::string ToHTML(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 {
 	std::string result = "<html>\n<head>\n";
-	result += "<meta http-equiv=\"content - type\" content=\"text / html; charset = utf - 8\" />       /* css-3 */\n";
+	result += "<meta http-equiv=\"content - type\" content=\"text / html; charset = utf - 8\" />       \n";
 	result += "<style type=\"text / css\" media=\"all\">  /* Mozilla, since 1999 */\n";
 	result += "pre {\n \n";
 	result += "white-space: -moz-pre-wrap;    /* Opera 7 */\n";

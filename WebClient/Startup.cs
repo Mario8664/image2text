@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using WebImage2Text.Models;
 
 namespace WebImage2Text
@@ -35,21 +38,30 @@ namespace WebImage2Text
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
-                app.UseSession();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Image2Text");
+                
             }
-
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     "CharGraphResult",
                     "ShowCharGraphHtml/",
                     new { controller = "Home",action= "ShowCharGraphHtml" }
+                    );
+                routes.MapRoute(
+                    "DownloadText",
+                    "DownloadText/",
+                    new { controller = "Home", action = "DownloadText" }
+                    );
+                routes.MapRoute(
+                    "ShowColorHtml",
+                    "ShowColorHtml/",
+                    new { controller = "Home", action = "ShowColorHtml" }
                     );
                 routes.MapRoute(
                     "Default",
@@ -61,7 +73,6 @@ namespace WebImage2Text
                     "Error/{id?}/{Content?}",
                     new { controller = "Home" ,action= "Error" }
                     );
-
             });
         }
     }

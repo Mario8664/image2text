@@ -15,6 +15,8 @@ namespace WebImage2Text.Controllers
     {
 
         private AppSettings AppSettings { get; set; }
+        public static string ParamWithOutput = "--source={0} --scalex={1} --scaley={2} --type={3} --output={4}";
+        public static string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
         public IActionResult Error()
         {
             int Code = -3;
@@ -24,7 +26,6 @@ namespace WebImage2Text.Controllers
             }
             return View(new ErrorViewModel { ErrorCode = -1 });
         }
-
         public HomeController(IOptions<AppSettings> settings)
         {
             AppSettings = settings.Value;
@@ -39,7 +40,7 @@ namespace WebImage2Text.Controllers
         {
             // full path to file in temp location
             var NowTimeStamp = DateTime.Now.ToString("MMddHHmmss");
-            var FilePath = env.WebRootPath + "/upload/" + NowTimeStamp + "." + SourceImage.First().FileName.Split('.').Last();
+            var FilePath = env.WebRootPath + "/StaticFiles/upload/" + NowTimeStamp + "." + SourceImage.First().FileName.Split('.').Last();
             if (SourceImage.Count != 0)
             {
                 HttpContext.Session.SetString("FilePath", FilePath);
@@ -59,9 +60,8 @@ namespace WebImage2Text.Controllers
             }
             try
             {
-                string Param = "--source={0} --scalex={1} --scaley={2} --type={3} --output={4}";
-                var FilePath = env.WebRootPath + "/generatetxt/" + SessionResult["TimeStamp"] + ".txt";
-                Param = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 0, FilePath);
+                var FilePath = Path.Combine(env.WebRootPath,"StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".txt");
+                Param = String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 0, FilePath);
                 if(ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, Param)==0)
                 {
                     if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
@@ -75,9 +75,28 @@ namespace WebImage2Text.Controllers
             }
             return View("Error", new ErrorViewModel { ErrorCode = -1 });
         }
-        public string ShowColorHtml()
+        public void ShowColorHtml([FromServices]IHostingEnvironment env)
         {
-            return "Show Color Html";
+            var SessionResult = GetSessionKey(HttpContext.Session);
+            if (SessionResult.Count == 0)
+            {
+                return ;
+            }
+            try
+            {
+                var FilePath = Path.Combine(env.WebRootPath,"StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".html");
+                Param = String.Format(ParamWithOutput, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 2, FilePath);
+                if (ImageProcesser.Instance.GenerateTxt(AppSettings.ExecuteFileName, Param) == 0)
+                {
+                    if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
+                    Response.Redirect(Path.Combine("StaticFiles", AppSettings.TextFileSavaPath, SessionResult["TimeStamp"] + ".html"));
+                }
+            }
+            catch
+            {
+                return ;
+            }
+            return ;
         }
         public Dictionary<string, string> GetSessionKey(ISession HttpSession)
         {
@@ -101,7 +120,6 @@ namespace WebImage2Text.Controllers
                 return View("Error", new ErrorViewModel { ErrorCode = 2 });
             }
             HttpContext.Session.Clear();
-            string Param = "--source={0} --scalex={1} --scaley={2} --type={3}";
             Param = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 1);
             int ExitCode;
             ViewData["Result"] = ImageProcesser.Instance.GenerateOutputString(AppSettings.ExecuteFileName, Param, out ExitCode);

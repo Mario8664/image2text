@@ -9,6 +9,7 @@ namespace WebImage2Text.Controllers
 {
     public class ImageProcesser
     {
+        public enum ProcessType { CharGraphHtml,DownloadTxt,ColorHtml };
         private static readonly Lazy<ImageProcesser> instance = new Lazy<ImageProcesser>(() => new ImageProcesser());
         private ImageProcesser()
         {
@@ -47,5 +48,6 @@ namespace WebImage2Text.Controllers
             ExitCode = pProcess.ExitCode;
             return output;
         }
+
     }
 }

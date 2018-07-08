@@ -3,6 +3,7 @@ D:\image2text\WebClient
 --application-name=WebImage2Text
 --content-root=D:\image2text\WebClient
 --file=D:\image2text\WebClient\Views\Home\CharGraphHtml.cshtml
+--file=D:\image2text\WebClient\Views\Home\ColorHtml.cshtml
 --file=D:\image2text\WebClient\Views\Home\Error.cshtml
 --file=D:\image2text\WebClient\Views\Home\Image2Text.cshtml
 --file=D:\image2text\WebClient\Views\Shared\_Layout.cshtml
