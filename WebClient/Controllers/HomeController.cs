@@ -122,7 +122,7 @@ namespace WebImage2Text.Controllers
             HttpContext.Session.Clear();
             string BuiltParam = String.Format(Param, SessionResult["UploadFileName"], SessionResult["ScaleX"], SessionResult["ScaleY"], 1);
             int ExitCode;
-            ViewData["Result"] = ImageProcesser.Instance.GenerateOutputString(AppSettings.ExecuteFileName, Param, out ExitCode);
+            ViewData["Result"] = ImageProcesser.Instance.GenerateOutputString(AppSettings.ExecuteFileName, BuiltParam, out ExitCode);
             if (ExitCode != 0)
             {
                 if (System.IO.File.Exists(SessionResult["UploadFileName"])) System.IO.File.Delete(SessionResult["UploadFileName"]);
