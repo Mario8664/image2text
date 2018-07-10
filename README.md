@@ -14,12 +14,23 @@ A cmdline tool that help you convert image with common format to character graph
 
 # Usage:
 ```
-$ > ./image2text --source=[source.jpg] --scalex=[x] --scaley=[y] --type=[0 is stdout, 1 is output txt] --color=[0/1] --output=[target.html(txt)]
+$ > ./image2text --source=[source.jpg] --scalex=[x] --scaley=[y] --type=[0 is stdout, 1 is output txt, 2 is output html with color.] --output=[target.html(txt)]
 
 also
 
 $ > ./image2text --help //to see a detailed usage.
 ```
+
+# Html Template
+
+You can customize the style of output html page. Modify what you want in 
+
+```
+ ./Template.html
+```
+
+Besides, you need to take this template with executable file in the same folder. The program will load this template when it needs to generate html page.
+
 # Dependencies:
 
 1. [OpenCV3.0](https://opencv.org/releases.html)
