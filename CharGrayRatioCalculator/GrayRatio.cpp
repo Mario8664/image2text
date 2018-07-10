@@ -10,7 +10,9 @@
 #include <cstring>
 #include "GrayRatio.h"
 #include<algorithm>
+#include<fstream>
 using namespace cv;
+using namespace std;
 IplImage* ImageHandle;
 /*
 This is a simple tool that can return gray ratio of a specified char graph.
@@ -39,7 +41,7 @@ double CalcCharGraphGrayRatio(char base, std::string _symbol_path = "AllFontSymb
 			if (cvs.val[2] >= 128) white++;
 			else black++;
 		}
-
+	delete ImageHandle;
 	return (double)(black) / (black + white);
 }
 
@@ -114,15 +116,26 @@ std::string ToText(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 
 std::string ToHTML(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 {
-	std::string result = "<html>\n<head>\n";
-	result += "<meta http-equiv=\"content - type\" content=\"text / html; charset = utf - 8\" />       \n";
-	result += "<style type=\"text / css\" media=\"all\">  /* Mozilla, since 1999 */\n";
-	result += "pre {\n \n";
-	result += "white-space: -moz-pre-wrap;    /* Opera 7 */\n";
-	result += "white-space: -pre-wrap;       /* Internet Explorer 5.5+ */\n";
-	result += "font-family: 'Menlo', 'Courier New', 'Consola';\n";
-	result += "line-height: 1.0;\nfont-size: 6px;\n}\n</style>\n";
-	result += "</head>\n<body>\n<pre>\n";
+	ifstream OpenFile;
+	OpenFile.open("Template.html");
+	if (!OpenFile.is_open())
+	{
+		cerr << "The file can not be open!" << endl;
+		exit(1);
+	}
+	string HtmlResult;
+	while (!OpenFile.eof() && !OpenFile.fail())
+	{
+		string Tmp;
+		getline(OpenFile, Tmp);
+		HtmlResult += Tmp;
+		HtmlResult += '\n';
+	}
+	OpenFile.close();
+	string Tag = "#COLORINFO#";
+	auto ColorInfoStartPos = HtmlResult.find(Tag);
+	HtmlResult.erase(ColorInfoStartPos, ColorInfoStartPos + Tag.length());
+	string result;
 	for (auto X : CalcPixelBlockAverageRGB)
 	{
 		for (auto Y : X)
@@ -136,13 +149,13 @@ std::string ToHTML(std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB)
 			st += std::to_string(Gs);
 			st += ',';
 			st += std::to_string(Bs);
-			st += ",1.0);\">¨~</span>";
+			st += ",1.0);\">¨€</span>";
 			result += st;
 		}
 		result += "\n";
 	}
-	result += "</pre>\n</body>\n</html>\n";
-	return result;
+	HtmlResult.insert(ColorInfoStartPos, result);
+	return HtmlResult;
 }
 
 std::vector<std::vector<cv::Vec3b>> CalcPixelBlockAverageRGB(cv::Mat & ImageMatrix, PixelBlockSize _BlockSize)

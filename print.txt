@@ -1,0 +1,156 @@
+                                                                                                         '''''''''                                                                        
+                                                                                                ::------~~~~~~~~~~~-----::''                                                              
+                                                                                               ~~~~~~~~~~~~\\\\\\\\\\~~~~~~~:                                                             
+                                                                                              -~~~~\\\\\\\\\\\\\\\\\\\\\\\\\\'                                                            
+                                                                                         '':::\\\\\\\\\\\/////////////\/\\///~:::'                                                        
+                                                                                    '::--~~~-~\\\\\\//////////////////////////-//\~--:'                                                   
+                                                                                ':--~~~~~~~~~\\\\/////77/\~~~~~~~\7777i/////i7~/77\\\\~~-:'                                               
+                                                                             ':-~~~~~~\\\\\~\\\///7/~-':           ::-~77777777~717/\\\\\\~~:                                             
+                                                                           ':-~~~~\\\\\\\\~\\//77~'  '1jj\'     '~1j1''':~/7777/\17////\\\\\~~:'                                          
+                                                                         ':-~~~~~\\\\\\\\~\\//7-    :jjjjjj7: :/jjjjjj:''''-\777//17i/////\\\~~-:                                         
+                                                                        ::-~~~~\\\\\\\\\~\\/77'    -jjjj7jjjj1jjjj7jjjj-'''''-777/\77777///\\\~~--'                                       
+                                                                      ':--~~~~\\\\\\\\~\\\//7     \jjjj\  ~1jjjj\' 7jjjj~'''':\7777\/77777///\\~~--:'                                     
+                                                                     ':--~~~~\\\\\\\~~\\\//7-    7jjjj7     -1~'''''1jjjj\''''~77777/\/7777i//\\~~-::'                                    
+            ://////////////////i777777777777-                       ::--~~~~~\\\\\~~\\\////7:  '1jjjj1          '''''jjjjj7'''~7777777\\/i77///\\~--::'                                   
+          '~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\-11                    :--~~~~~~\\\\\\\\\\/////7\  ~7jjj1           ''''':jjjjj~''/777777777///////\\~~-:::'                                  
+          -j-:~jj:::::::::::::----------1j/-~MM                   :--~~~~~~~\\\\\\\\////////7\:   :~'  '''''''''''''''-/~:''-\777777777777////\\\~~--:::'                                 
+          -j-:~T2::::-~~~~~~~~~\\-------2T7-~MM                  ::-~~~~~~~\\\\\\\\\///////////\---~~~~~~~~~~~~~~~~~~~~~--~/7777777777777777//\\\~~--:::''                                
+          -j-::::::--\jj2222222jj~~---------~MM                 ':-~~~~~~~\\\\\\\\\/\\\\\\\\\\//77777777777777777777777777/////////7777777777/\\~~--:::::''                               
+          ~j--:::::1jj1jMMMMMMA1jjji--------~MM                ':--~~~~~~\\\\\\\\\\~----~\/7771111111jjjjjjjjjjjjjjjjj11111111777777i///777777\~~--::::::::'                              
+          ~j~-----:1111jMM7----jjjjSA$------~MM               '::--~~~~~\\\\\~~\\/\/711jjjj222222222222jj2222222222222222222222jjjjj111177/\/7\~--::::::::::'                             
+          ~j~-----:1jjjjMM7----jjjjSM$------~MM              ':::--~~~~~~~~~\/7711jjjjjjjjj2222222222222222222222222222222222222222222jjjjj17\~~-::::::::::::                             
+          ~j~------~\1mmMM7-~77jjjjSM$------~MM              :::---~~~~~~~/771jjjjjjjjjjjjj222222222222222222222222222222222222222222222222jjj1\-::::::::::::'                            
+          ~j~--------\jjjj7/1jj$$$$AMd------\MM             ':::---~~--\771jjjjjjjjjjjj222222TTT222222222222222222222222222TT22222222222222222jjj7~:::::::::::                            
+          ~j~-------------1jjj2MMSTTTj-----~\MM             ::::--::-\71jjjjjj22222222TT$mmmSTT2222222222222222222222222222TTTTTTTT2222222222222jjj1~'::::::::'                           
+          ~j~-------------71j2TMM\-------~~~\MM            '::::''-\71jjjjj22222TTTT$AAAAAAAAAAS2jjjjjjjjjjjjjjjjjjjjjjjjj22SmAAAAAmSTTTT222222222jjj1~'''::-::                           
+          ~j~---------------2AAAA\-----~~~~~\MM            ''::-~/71j2jj222TTTTTTTTAAAAAAAAAAAAAATj11111111111111111111jjTAAAAAAAAAAAA$TTTTT22222222jjj1~' ':::                           
+     '''' ~2~-------------1jjjj------~~~~~~~\MM          ':~\77111j2222T$AASTT222TAAAAAAAAAAAAAAAAm117777711111111111112AAAAAAAAAAAAAAAm222TTTSmT22222jjj17~-:'                           
+    '':-~712~-------------1jjj2AA\~~~~~~~~~~\MA :---:' '~7111111j2TdmAAAAAT222jjjAAAAAmSTTTTSmAAAAAS1777777777777777112AAAAAAAAAAAAAAAAAmj2222TSAAAmSTT2j111j11\-'                        
+   ''::-\1j2~-\SS---------\\2mAMM\~~~~~-TS1~\MA2j177777111jjjjj2SAAAAAAAAT2jjjj1TAASj17777777712mAAAj7777777777777777jAAAAmT2j1111j2TmAAA2jjjj22SAAAAAAmS2jj11jjj1~                       
+  ''::-~\jj2\~\jj-~~~~~~~~~-7jjjj~~~~~~~1j7~\MMSj777777jjjj222SAAAAAAAAASjjj11112T7777777777777771SAS/777777777777777$AmT17777777777711TA2111jjjj$AAAAAAAAS22jj11j17'                     
+  ''::--\jTSj1111111111111111111111111111111jMM$1777777jjj22TmAAmAAAAAAAj1111177777777777711111177/1T\//////i77777777Sj771jjjj117777777711111111j2AAAAAAAAAAS22jjj117                     
+  ''::--\1AAA1111111111111111111111111111111AAA27777777j222TmAAAmAAAAAAm7i\\~~~~~~~~\\711/~~~\\\/11////////////i7777777jjj11111jjj1777777777777711AAAAAAAmAAA$222jj11:                    
+  ''::--~71TSj      ':                     7T2j17777771222TSmAAAmAAmmAA$------------~77:''':\1j22222~~-~~~~~\\\/77777122222j17//77jj7777777777777/mAAAmAAmAAAmST22jj1-                    
+  ''::--~\7j2T~ :~71111jj7~-'              jjj177777771222TSmAAASA$TTS$T:----------~/\''''-777111jjjj------~~~~~~\/77S2jjjjjj2j\\\\7j7777//////\\\mAAmmAASAAAmSTT2jj1-                    
+  ''::--~\71\: '':~\\///7711j1~'          ~jj117777771jj2TS$mAAAmATTTTST:----------~/''''-7\\jT2TTj1j~------~~~~~~\722j2TTT2111j~~~~7177////\\\\\~mAmm$mASAAAmSTT2jj1'                    
+   ''::--~-   '''::::''''::-~/7j\        'jj1117777771jj2T$mmAAAdATTTTT2:----------\:''''7~~2Sj '$m27\------~~~~~~\7TjTS\ :TT1111~~~~j77//\\\\\~~~AAmmS$ASAAAmSST2jj\                     
+   '':::-'   ''''    ''''::--~~\/7      -1jj1177777771j1j222222TSA2TTTT2:----------\''''-7~/Tmmmmmm$7/-::-------~~\1TTTTTj2TTj\/j-~--177//\\\\\~~~AmmmSTATAm$SS$T2j1'                     
+    ''::'   ''    ''''::::--~~~~~\~  :ij2jjj117777777117\111jjj2SAj2TTT2:----------\''''-7\7mmSTT21\----------------~/jTSTTSS2\7j---~777//\\\\\~~~AmmST2A2j11771jj1'                      
+     '::  ''     '':-:''   '':--~~\7j22222jj11777/i7771j711j11jjTAj2TTTT:----------\:''''1i\2$2\-:::::------------------~72TS7\77---~//////\\\\~~7Am$T2jA1777//\~-'                       
+      :: '''   ''-:'     '''::----~/1222jjj1117777i77771jjjjjj112AjTTTS$-:---------~~''''-j77\:::::::::::------------------17~7j~~~~\~\\\\\\\\~~~2mmmS22A77777777\-                       
+      ': ''  '':-'    '''::------~~\\jjj1/~~-----~~\/771j2jjjjj1jm2TSS$T:::-7:::::--~-::::-7:::::::::::::-------------------:17~~~~\~~~\\\\\~\~~-TAmm$2Smi77111117\'                      
+       ' '' '':-    '':-~~\/~~~~~~\\\7jj17:'':::---~~\77jjjj11jjjT2TSmA~::\$mS1~-----~~---:::::::::::::------------~~~~~~~~--:~~\\\~~~~~~~~7Sj~~-7AmmSTTS7777711117:                      
+            '':'  '':-~\77117\\\\\//7711117::::::--~~\i71j111j22T22TT$~::7$$mmmmT1\~~~~~~~:::::::::::------------~~~~~~~~~~~---\~~~~~~~~7j$mmmT~-:TAAmTj27777771117-                      
+            '':   '::-~~\/7T21777711177777/\~~-----~~\777j11j2TT22TTS\':-SSS$$mmmmmmT2j17/:::------------------~~~~~~~~~~~~~~--/\\\712TmmmmAAmmj--:SmmSjjjj17777117:                      
+                 ''::--~~~\11117777///\\\\\\\///\\~~\77771112TT222TS2'::1$SSSSS$mmmmmmmmmA-------------------~~~~~~~~~\\\\\~~~/AAAAAAAAAAAAAAAmS\-::mm$211jj1/77117'                      
+                 ''::------::::::::::---~~~\\\\\/777777771112T2222$T::::j$$$SSSSS$$mmmmmmAj:--------------~~~~~~~~~\\\\\\\\\~-SAAAAAAAAAAAAAAAA$1--:1mS2111j1/7717\                       
+               ''':::::::::::::::---------~~~~\\\//7777771j1j2T22jmj':--~mmmmmm$$$SSS$dmmmA7---------~~~~~~~~~~~\\\\\\//\\\\~jAAAAAAAAAAAAAAAAAm7~--:2m1111j1//77/'                       
+            ''''::::-----------~~~~~~~~~~~~~~\\\\//i777771jjjj222jS7::---~Tmmmmmmmm$SS$dmmmA1--~~~~~~~~~~~~~~\\\\/////////\~2AAAAAAAAAAAAAAAAAAj~~~-:1S711j17777/-                        
+             '::::---~~~~~~~~~~~~~~~~~~~~~\\\\\///i7777771j1jjjjjjj\:------\2mAAAAmm$$$mmmmmAS/-~~~~~~~~\\\\\////i7777777\1mAAAAAAAAAAAAAAAAAT7\\~~-:2j71177777/-                         
+               ::--~~~~~~\\\\\\\\\\\\\\\\\\\\\//i7777777771171j111j\::--------\1jjSmmmmmmmmmmmAS1~~\\\\///i77777777777i/jmAAAAAAAAAAAAmmm$Tj7i/\\~~-:j~\7777//\-                          
+                '--~~~\\\\\\\\\\\\\\\\\\\\\\//i777777777777777j11jjj':----------~\iSmmmmmmmAAAAmmmT217\/i77777777777j2$AAAAAAAAAAAAAA$117777i/\\\~~--1\~~\\\\\:                           
+                 '~\\~~\\\\\\\\\\\\\////////i777777777777/777771jjj2-:------------~~jmAAAAAAAAmmmmmmAAAm$TTTTTTS$mAAAAAAAAAAAAAAAAAAT777777//\\\\~~-~7//\\\\~                             
+                    ''-~~\\\\/////////////7777777777//\//777~' '-/7jT:-------------~~~7j2TTTT2jSAAAAAAAAAAAAAAAAAAAAAAAAATTmAAAAmS277777/////\\\\~~-j7777/-'                              
+                        :~~\\\/////////7777111777\\\\\//7717         7:-------------~~~~~~/77777jTAAAAAAAAA$SAAAAAAAAAAT1112j117777777i//////\\\\~-2~--:'                                 
+                          :-~~\\\\///7711117\\~~~~\\\/7712TT:        '7:----------~~~~~~~~~~\1/\//\7j222jj1111j2TTTT2171jj2j17777777//////////\\~-2-                                      
+                            '::--~~~~~-:::''::--~\\/71j2222T7         '7\----~~~~~~~~~~~~~~~~\///i77777777771111jjj11j117777777777///////////\\~~2:                                       
+                                   '''':::--~~\\71j22222222TT           -j---~~~~~~~~~~~~~~~~---------~~\\\\///\//77777i////////////7i//ii///\~j1'                                        
+                           ''''''::::---~~\711j2222222222222T~           '71~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\//7777777//////////i7777777/\\1T~                                          
+                             ':--~~\/711j2222222222222222222Tj             :1j7~-~~~~~~~~~~~~~~~~~~~~\\\/i7777777777/////////i7777777777i\12T~                                            
+                               :1jj22222222222222222222222222T'             :2T2j1/~~~~~~~~~~~~~~~~~--~~~~~\\////////////i77777777777i7j2$$S                                              
+                                \71jjjjjjjjjjjjjjjjjj22222222TT221111111111117TTTT2217\~~~~~~~~~~~~~~~~~~~~~~~~\\//////777777777777j2SmSS21'                                              
+                                :\7777111jjjjjjjjjjjjjj222222TTTTTTTTTTTSSSSSS$$$TTTT22217\~~~~~~~~~~~~~~~~~\\\\///777777777777jTSm$SSj~'                                                 
+                                 \/77777777111jjjjjjjjjj22222TT222TTTTTTTTTTTSSSSSS$S$$STT2j17\\\\\\\\\\\\\//i77777777777712T$md$dmmSSjjj11\\~-:''                                        
+                                 :\77777777771111jjjjjjjj2222222222222TTTTTTTTTTTTTTTTTS$mm$STT2jj17777777777777777711j2TmmmmmmmmmmmmTTjjjjjjj11177\~-:'                                  
+                                  ~/777777777111111jjjjjj2222222222222222TTTTTTTTT22TTTTTTTS$Amm$SSSSSTTTT2222TTTTSmmmmmmmmmAmmmmmm$$STjjjjjjjjjj11111177\~:'                             
+                                  '\77777777711111jjjjjjjjj2222222222222222222222222222222TTTmm2TSSSSSSSS$$$$d$$$$$SSSSSSSSmm$m$$$$$S$TT1jjjjjjjjjjj1111111117~-'                         
+                                   -/7777777711111jjjjjjjjjjj22222222222222222jjj222222222T2SmT77771j22TTSTTTTTTTTTTTTTTTTTSmS$$SSSSSSTS1jjjjjjjjjjjj1111111111117-:                      
+                                    ~/777777111111jjjjjjjjjjjj222222222222222j1j2j2222222222$S2777777777711jjj222222222222TTmSSSSSSSSSST21jjjjjjjjjjjjjjj111111111177-'                   
+                                    '\77777111111jjjjjjjjjjjjj222222222222Tj111222222222222TST177777777777777777711jjj22222T$TSSSSSSSSSTS7jjjjjjjjjjjjjjjjjj11111111117\:                 
+                                     '\77711111jjjjjjjjjjjjj222222222222TTj777j222222222222STT777777777777777777777777711jj2TT2TTTTSSSSTSj1jjjjjjjjjjjjjjjjjjjj1111111117\'               
+                                       ~77111jjjjjjj2222222222222222222TTj777122jj11jj22222$$2jj111777777777777777777777111j2T2TTTTTTTTTT271jjjjjjjjjjjjjjjjjjjjj1111111177-              
+                                        :/11jjjj222222222222222222222TTTj777721\~~\\\/7jT2TmS2222222TT2222222222222222TTTTTS2T2T2jjjj2TT2T171222jjjjjjjjjjjjjjjjjjj111111117~             
+                                           -7jj2222222222222222222TTTSTj77771\\\\~~~~\772TTmT222222222222222TTTTTTTTTTTTTTTT2Tj7\\/\\~~7jTj171222222jjjjjjjjjjjjjjjjj11111117~            
+                                              :-~\7122222222222TTTTTS21//7j1\\~~-~~~~\\7jTSm22222222222222222T2TTTTTTTTTTTTT2T\\\\\\\\\\~\21771222222222jjjjjjjjjjjjjjj111111/'           
+                                                      :::-~~~/1111j221/7j2j\~~~-:~~~\/71T2$$22222222222222222T2TTTTTTTTTTTTT22--~~\\\\///~\T1771T22222222222jjjjjjjjjjjj111117~           
+                                                                  '177j222j~~~~~~~\/77jT2T$S22222222222222222TTTTTTTTTTTTTTT2T/~~~\\\/i77\~2T277jTTT22222222222jjjjjjjjjj111117           
+                                                                  7712222221\\\\\/71j2T22TdT2222222222222222T2TTTTTTTTTTTTTT2TT7\\/777111772TT2j7jTTTTTT222222222jjjjjjjj111117           
+                                                                 -7jj22222222jjjj22T222T$mS222222222222222222TTTTTTTTTTTTTTTTTTT2171111111jSTTTTj12SSTTTSSST2222jjjjjjjjjj11117           
+                                                                '1jjjj2222222222222TS$ST222222222222222222222TTTTTTTTTTTTTTTSSSTTSTT22222TSSTTTTT2jSmm$STTT2222jjjjjjjjjjj1111\           
+                                                               -1jjjjj22j2222222T$ST2222j22222222222222222222TTTTTTTTTTTTTTTTTSSSSSTTTSSSSSSTTTT2T22mSTTT222222jjjjjjjjjjjj111:           
+                                                              '11jjjjjj22j222222j2jj2222222222222222222222222TTTTTTTTTTTTTTTTTTTTSS$SSS$SSSTTTTTT222TTTTT22222jjjjjjjjjjjjj117            
+                                                              71jjjj2j2222222222222222222222222222222222222TTTTTTTTTTTTTTTTTTTTTTTTTTSSSSSSTTTTTT2222TTT222222jjjjjjjjjjjj111'            
+                                          :::~1j111111jT\'   :1jjjjjjj22222222222222222222222222222222222TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTSSTTTTTTTT22TSTT2222jjjjjjjjjjjjj11~             
+                                       '\/\7jTT22222SAAAAAj' 7jjjjjj2222222222222222222222222222222222TTTTTTTTTTTTTTTTTTTTTTTTTTTTTSSSSSSSSTSSTSTTTTTTT2TT222jjjjjjjjjjjj117              
+                                       ~\/12TTS$22$AAAAAAAAm 2222222222222222222222222222222222222TTTTTTTTT2222jjjj222TTTTTTTTSSSSSSSSSSTTTTTT22222jjjjj2T222jjjjjjjjjjjj11               
+                                     '77712TTSAmSAAAAAAAAAAAA22222222222222222222222222222222222T2j111177/\\\~----~\7/\1SSSTTTTTTTTTT222TTT22TT222222jjj2T22222jjjjjjjjjj1'               
+                                    \T2m22T$AAAmmmAAAAAAAAAAATT2222222222222222222222222222222Tj~:-\//////777771jj\\77/~1STTTTTTTT2222222222222T22222jjj2277////77777777/~                
+                                  '12222SmAAmmmmmmmmAAAAAAAAASTTT22222222222222222222222222TTT2-'~7772jj222TTTTSSm2\777\\SSSTTTT22222222222222222222jjjjj2177/\\\~~~~~----::'             
+                                 -T2222TTTTmmmmmmmmAAAmAAAAAASTTTTTTTTTTTTT22222222222222222222\~/772T222222TTTTSS$\777/~SSSTTTTTTTT222TTTT222222j22jjjjj22177//\\\\\~~~~~~-              
+                                \22222222TmmmmmmmAAAAAAAAAAmST2j1jj222222TTTTT2222222222222222T7\/771m222222TTTTSSm7/77/~T$STTTTTTTTTTT2TT2222222222jjjjj2Tj117777///\\\\~-'              
+                              '/~-----::\1TmmmdAAAAAAAAAAS2jjjjjjjj222222TTTSTTTTT222222222222Tj\i111S2jj22222SmAmT2\777\1mSSTTTTTTTTTTTTTT222222222222jj2211777777771177:                
+                             '111777777777712mAAAAAAAAS22jjjjjjjj1111111TSAAAAAmSmS2222$mS2222TT\\-\7/\\\722TTTmmSTT\777\/SSSTTTTTTTTT222222222TTTTTTTTT2jj1777/\\\~~~~--:'               
+                              72jj7777711111j$AAAAAAAT22jjjjjjj1177\/\\1SAAAAAAmTmAT22TAAm22222T77117j2TST222TTTTSS$/777/~TSTTTTTTTTTTTTT222TTTTSSTTTTT22j1177//\\\~~~~~--:'              
+                              '2222jj111111jjjAAAAAAA222jjjjjjjj111177/2$m$T22TS$mmmT222jj22222T1\/771mT22222TTTTSSm7i77/\2SSSSTTTTSSSSSSSSSSSSTTTTTTTT2jj11777/\\\\~~~~~--:'             
+                               \22222jjjjjjjjjTAAAAAmj2jjj2j22jjjjjj111SmST22TTTS$mAmT22222222222\/77/m222222TTTS$$S\777/\jmmmmmmmmd$$$$SSSSSSTTTTTTTTT2jj11777//\\\\~~~~~--:~-'          
+                                j222222jjjjjjjjAAAAAmjjjj27::7Tjjjjjjj2SmST222TTS$mAmm22222222TTT7/777j222222jj17i/\777/\7Sm$$$$$$$$$SSSSSSSSSTTTTTTTT22jj11777//\\\\\~~~~~--~\~~-:       
+                                 \j222222jjjjjj$AAAAA2jjjj/~~7T2jjjjjjSmST22222TTSmmAmmmmmmmmmmm$j777777777777777777771j2$$$$$$$$SSSSSSSSSSSSSSTTTTTTT22jj117777/\\\\\\~~~~~-177\~~-      
+                                   -/77777771jSmmmmAA$jjjj1712TjjjjjjTm$T22222TTTS$mAmmmmmmmmmmmm$T2j11111jj222TTTSSS$$$$$$$$SSSSSSSSSSSSSSSSTTTTTTTTT22jj111777//\\\\\~~~~~~j7/\\~~'     
+                                            :TSS$mmmAATjjjj222jjj2j2$m$Tj22222TTTTS$mmmmmmmmmSSSSSSSSS$S$$$$$$$$$$$$$$$$$$SSSSSSSSSSSSSSSSSSTTTTTTTTTT22jjj11777//\\\\\\~~~~7j77\\~~'     
+                                             7TSS$mmmAA2jjjjjjjj2TSm$T2jj22222TTTTSSmmmmmmmmd$SSSSSSSSSTSSSS$$$$$$$$$$S$SSSSSSSSSSSSSSSSSSSSSTTTTTTSST22jjj117777/\\\\\\\~~~j177\\~~      
+                                              jSSS$mmAA21j22TTTTTT22j1jjjj2222TTTTTSmmmmmmmmm$$$SSSSSSSTSSSSSSS$$SSSSSSSSSSSSSSSSSSSSSSSSSSSSSTTTTTSSTj1jjj111777//\\\\\\~~~77\~~~~:      
+                                              -2TSS$mmm21jjjjjjjjjjjjjjjj22222TTTTTSmmmmmmmmd$$$$$SSSSSTSSSSSSTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSTTTTTT211jjj111777//\\\\\~~~~~~~~\-       
+                                                'j22TS$T1jjjjjjjjjjjjjjj22222TTTTTTSmmmmmmmm$$$$$$$SSSSTSSSSSSSSSSSSSSSS$SSS$SSSSSSSSSSSSSSSSSSSTTTTTT2jjjjj1117777//\\\\~~~~~~\~'        
+                                                 :1j2TSS1jjjjjjjjjjjjjj22222TTTTTTTSmmmmmmm$$$$$$$$$$$SSSSSSS$S$$SS$$SS$$S$S$SSSSSSSSSSSSSSSSSSSTTTj22222jjjj1117777//\\\\\\\\~'          
+                                                  71j2S$1jjj2jjjjjjjj222222TTTTTSTTSmmmm$$$$$$$$$$$$$$SS$$S$SS$S$$$$$S$SS$S$$$$SS$$$SSSSSSSSSSSSTTT7711jjj1111111777777/\\~~:'            
+                                                  '112TS21jj222222222222222TTTTSSSSmmmm$d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$SSSSSSSSSSSSSSTTT ':~~\77~~~--~~---:'                   
+                                                   \1j2TSjjj2222222222T2TTTTSSSSS$mmmmmmmmmmmmm$$$$$$$$$$$$$$$$$$$$$$dmmmm$$$$SSSSSSSSSSSSSSSSSSTT2                                       
+                                                    11jTSS2jj22222TTTTTTTTSSSSS$mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm$$$$$$SSSSSSSSSSSSSSSSSSSSTT2                                       
+                                                    ~1j2TSS/'~7j22TTTTTTSSSS$$dmmmd$$$$$$$dmmmmmmmmmmmmAAAAAmmmmmm$$$$$$SSSSSSSSSSSSSSSSSSSSSSSSTT2                                       
+                                                     ~j2Tj~     jj222TTTT$$$$$$$$$$$$$$$$$$$$$$mmmmmmmmmAAAmmmmm$$$$$$SSSSSSSSSSSSSSSSSSSSSSSSSSTT2:                                      
+                                                                j22222TTTT$$$$$$$$$$$$$$$$$$$$$$dmmmmmmmAAAmmmm$$$$$$SSTTTTTTTTTTTTTTTSSSSSSSSSSTT2~                                      
+                                                                1j222222TTTS$$$$$$$$$$$$$$$$$$$$$mmmmmmmAAAmmmm$$STTT2TTTTTTTTTTTTTTTTSSSSSSSSSSTT2~                                      
+                                                                /j222222TTTTS$S$$$$$$$$$$$$$$$$$$$mmmmmmAAAmm$STTTTT22TTTTTTTTTTTTTTTSSSSSSSSSSSTT2~                                      
+                                                                -j222222TTTTTTS$SSSSSS$$$$$$$$$$$$dmmmmmmAAmmTTTTTTT2TT2TTTTTTTTTTTTTSSSSSSSSSSTTT2~                                      
+                                                                -j222222TTTTTTTTSSSSSSSS$$$$$$$$$$$mmmmmmAAmmTTTTTT2222TTTTTTTTTTTTTTSSSSSSSSSSSTT2~                                      
+                                                                :j222222T2TTTTTTTTTSSSSSSSS$$$$$$$$mmmmmmAAmmTTTTTTTT2TTTTTTTTTTTTTTTSSSSSSSSSSSTT2~                                      
+                                                                 jj2222222TTTTTTTTTTTSSSSSS$$$$$$$$dmmmmmAAmmTTTTTT2TT2TTTTTTTTTTTTTTSSSSSSSSSSSTT2~                                      
+                                                                 jj22222222TTTTTTTTTTTTTSSSS$$$$$$$$mmmmmAAmmTTTTTT22222TTTTTTTTTTTTTSSSSSSSSSSTTT27                                      
+                                                                 1j2222222222TTTTTTTTTTTTSSSS$$$$$$$mmmmmAAAmTTTTTT2222TTTTTTTTTTTTTTTSSSSSSSSSSTT2j                                      
+                                                                 1j22222222222TTTTTTTTTTTSSSSSS$$$$dmmmmmAAAmSTTTTT22222TTTTTTTTTTTTTTSSSSSSSSSSTT2j                                      
+                                                                 /jj2222222222TTTTTTTTTTTSSSSSS$$$$$mmmmmAAAmSTTTTT222222TTTTTTTTTTTTTSSSSSSSSSSTT22                                      
+                                                                 ~j22222222222TTTTTTTTTTTSSSSSS$$$$$$mmmmmAAm$TTTT222222222TTTTTTTTTTTSSSSSSSSSTTT22                                      
+                                                                 \jj2222222222TTTTTTTTTTTTSSSSS$$$$$$mmmmmAAm$TTTTT2222222TTTTTTTTTTTTTSSSSSSSSSTT22~                                     
+                                                                 1j222222222TTTTTTTTTTTTTTSSSSSS$$$$$dmmmmAAmmTTTTT22222222TTTTTTTTTTTSSSSSSSSSSTT22~                                     
+                                                                 1j2222222222TTTTTTTTTTTTTSSSSSS$$$$$$mmmmAAmmTTTTT2222222TTTTTTTTTTTTTSSSSSSSSSTTT2~                                     
+                                                                 1j2222222222TTTTTTTTTTTTTSSSSSS$$$$$$mmmmAAmmTTTTTT222222T2TTTTTTTTTTTSSSSSSSSSTTT2j                                     
+                                                                'jj2222222222222TTTTTTTTTTTSSSSSS$$$$$dmmmAAAmTTTTTT22222222TTTTTTTTTTTTSSSSSSSSTTT2j                                     
+                                                                -11jj222222222222TTTTTTTTTTSSSSSS$$$$$$mmmmAAmTTTTTT2222222TTTTTTTTTTTTTTTTTTTTTTT222-                                    
+                                                                \jj222222222222TTTTTTTTTTTTTSSSSS$$$$$$mmmmAAmTTTTTTT22222222TTTTTTTTTTTTTTTT22222jj1\                                    
+                                                              :12222222222222222TTTTTTTTTTTTSSSSS$$$$$$mmmAAAmTTTTT222222222222T2222222TTTTTTTTTTTTTT27-                                  
+                                                            '://771j22TTTTTTTTTTTTTTTTTTTTTSSSSSSS$$$$$mmmAAAmTTTTT22222222222222222222TTTTTTSSSSSSSSTT27                                 
+                                                         -\7711jjjj2222TTTTTTTTSSSSSTTTTTTTSSSSSS$$$$$dmmmAAAmTTTT222222222222222222TTTTTTTTTTTTT22j1177/-:                               
+                                                      :\7111jjjjj222222TTTTTTTTTTSSSSSSSSSSSSSSSSS$$$$dmmmAAAmTTTT222222222222222TTTTTTTTTTTTTTT222222jjjj117~:                           
+                                                     /111jjjjjjjjj2222222TTTTTTTTTTSSSS$$$$SSSSSS$$$$$mmmmAAAmTTT222222222222TTTTTTTTTTTTTT2T222222222222jjj1117-                         
+                                                   '711jjjjjjj11jjj22222222T2TTTTTTTTSSS$$$mmm$$$$$$$$$mmmAAmSTTTT2222222TTTTTTTTTT22222222222222222222222jjjj1117~                       
+                                                  '11jjjjj111777111jjj22222222222TTTTTTSSS$$$mmmmm$$$$$mmAAm$2T222222TTTTSTT2222222222222222222222222222222jjjj11117:                     
+                                                  71jjjjj11177/777111jj22222222222T22TTTTSSS$$mmmmmmm$$$mAmmS2TTTTTTTTSST2T22222222jjjjjjjjjj222222222222222j2jjjj111:                    
+                                                 -1jjjjjjj11177777111jj2222222222222222TTTSSS$$$mmmmmmmmmmSS$2TTTSS$STTTT22222222jj117777111jjj22222222222222222jjjjj1                    
+                                                 \1jjjjjjjj111111111jj222222222222TTTTTTTTTSSSSSSSSSSSSSST2TSTSTTT22222222222222jj1177777111jjj22222222222222222222jjj-                   
+                                                 1jjjjjjjjjjjjj11jjjj2222222222TTTTTTTTTTTTTTTTTTTTTTTTTST2TTTT22222222222222222jjj17771111jjj222222222222TTTTT222222j1                   
+                                                 ~jjjj22222jjjjjjj222222222TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT2TTTT222222j22j222222222jjj1111jjjj2222222TTTTTTTTTTTTTTT2221                   
+                                                 'jjj22222222222222222222TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTj2TTTT2222jj2222222222222jjjjjjj222222222TTTTTTTTTTTTTTTTT22~                   
+                                                  ~jjj222222222222222222TTTTTTTTTTTSSSSSSTTTTTTTTT2TTT2227~\2TTTT222222jj2222222222222222222222222TTTTTTTTTTTTTTTTTT22'                   
+                                                   ~jj222222222222222TTTTTTTTTTTTTSSSSSSSTTTTT2222222222j-  1j22222jj2jjj222222222222222222222TTTTTTTTTTTTTSTTTTTTTT2/                    
+                                                    -1222222222TTTTTTTTTTTTTTTTSSSSSSSSTTTTTT2jjjj222j/~:   \1j22222jjjjj2222222222222222222TTTTTTTTTTTTTTSSTTTTTTT2j                     
+                                                      ~j222222TTTTTTTTTTTTSTSSSSSSSSSSTTTT22jjj1~7~:           -~7jj2T771jjj2222222222222TTTTTTTTTTTTTTTSSSTTTTTTTT1'                     
+                                                      '~\711jj22TTTTTTTTTSSSSSSSTTTTTT222jjjj7~                     :::'~\i71j222222TTTTTTTTTTTTTTTTSSSSSSSTTTTT21-                       
+                                                       '-~~~\\\\/777111jjjjj22222jjjjjjjj1/-'                            '-~\\/711jj2TTTTTTTTTTSSSSSSSTTTT22222j7:                        
+                                                           ''::----~\\\\\\/777711//7--:'                                     :-~~~\\\\77711jjj22222222222jjjj1/~:                         
+                                                                                                                                 ''::--~\\\\/77777111117/~~''                             
+                                                                                                                                            ''''''':                                      
+                                                                                                                                                                                          
+                                                                                                                                                                                          
+                                                                                                                                                                                          
+                                                                                                                                                                                          
+                                                                                                                                                                                          
