@@ -2,7 +2,7 @@
 A cmdline tool that help you convert image with common format to character graph.
 [![Build Status](https://www.travis-ci.org/537PowerTeam/image2text.svg?branch=master)](https://www.travis-ci.org/537PowerTeam/image2text)
 
-[image2text demo website](http://nemesiss.moe)
+~~image2text demo website~~
 
 # Functions:
 
